@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1525ac9700617244bbdd0c6855059861, type: 3}
+  m_Name: MaxGun
+  m_EditorClassIdentifier: 
+  activationType: 1
+  shootType: 3
+  damage: 1
+  timeBeforeFiring: 0
+  timeBetweenShots: 0.2
+  projectileSpeed: 10
+  hitDistance: 10
+  hitDelay: 0.2
+  infiniteAmmo: 1
+  ammoMax: 120
+  infiniteMag: 1
+  magMax: 20
+  reloadTime: 2
+  fuelConsumptionRate: 0.5
+  explosiveAmmo: 1
+  shockWaves: 1
+  overheatable: 1
+  knockback: 1
+  goreyDeath: 1
+  ricochet: 1
+  multishot: 1
+  lightning: 1
+  explosionArea: 3
+  shockWaveSize: 5
+  timeToOverheat: 8
+  timeToCool: 5
+  knockbackPower: 10
+  ricochetCount: 5
+  split: 3
+  consumeExtraAmmo: 1
+  angleDifference: 45
+  exponentialLightning: 1
+  flatDiminishPercentage: 0.15
+  maxChain: 4
+  frost: 1
+  frostDuration: 4
+  frostSlowdown: 0.15
+  stun: 1
+  stunDuration: 2
+  poison: 1
+  poisonDuration: 6
+  poisonDamage: 30
+  enemyConversion: 1
+  conversionDuration: 10
