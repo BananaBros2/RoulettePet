@@ -10,30 +10,29 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1525ac9700617244bbdd0c6855059861, type: 3}
-  m_Name: Gun2
+  m_Name: Chainsaw
   m_EditorClassIdentifier: 
   activationType: 1
-  shootType: 0
-  damage: 5
+  shootType: 3
+  damage: 4
   timeBeforeFiring: 0
-  timeBetweenShots: 0.2
+  timeBetweenShots: 0.1
   projectileSpeed: 10
   hitDistance: 10
   hitDelay: 0.2
-  infiniteAmmo: 0
+  infiniteAmmo: 1
   ammoMax: 90
-  infiniteMag: 0
+  infiniteMag: 1
   magMax: 20
   reloadTime: 2
-  fuelConsumptionRate: 0.5
   overheatable: 0
   explosiveAmmo: 0
-  shockWaves: 1
+  shockWaves: 0
   knockback: 0
-  ricochet: 1
+  ricochet: 0
   multishot: 0
   lightning: 0
-  goreyDeath: 0
+  goreyDeath: 1
   timeToOverheat: 8
   timeToCool: 5
   explosionArea: 3

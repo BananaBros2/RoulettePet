@@ -10,49 +10,48 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1525ac9700617244bbdd0c6855059861, type: 3}
-  m_Name: MaxGun
+  m_Name: FireOrb
   m_EditorClassIdentifier: 
-  activationType: 1
-  shootType: 3
-  damage: 1
+  activationType: 0
+  shootType: 0
+  damage: 15
   timeBeforeFiring: 0
-  timeBetweenShots: 0.2
-  projectileSpeed: 10
+  timeBetweenShots: 2
+  projectileSpeed: 3
   hitDistance: 10
   hitDelay: 0.2
-  infiniteAmmo: 1
-  ammoMax: 120
-  infiniteMag: 1
-  magMax: 20
+  infiniteAmmo: 0
+  ammoMax: 20
+  infiniteMag: 0
+  magMax: 5
   reloadTime: 2
-  fuelConsumptionRate: 0.5
-  explosiveAmmo: 1
-  shockWaves: 1
-  overheatable: 1
-  knockback: 1
-  goreyDeath: 1
-  ricochet: 1
-  multishot: 1
-  lightning: 1
-  explosionArea: 3
-  shockWaveSize: 5
+  overheatable: 0
+  explosiveAmmo: 0
+  shockWaves: 0
+  knockback: 0
+  ricochet: 0
+  multishot: 0
+  lightning: 0
+  goreyDeath: 0
   timeToOverheat: 8
   timeToCool: 5
-  knockbackPower: 10
+  explosionArea: 3
+  shockWaveSize: 23
+  knockbackPower: 200
   ricochetCount: 5
   split: 3
   consumeExtraAmmo: 1
   angleDifference: 45
-  exponentialLightning: 1
+  exponentialLightning: 0
   flatDiminishPercentage: 0.15
   maxChain: 4
-  frost: 1
+  frost: 0
   frostDuration: 4
   frostSlowdown: 0.15
-  stun: 1
+  stun: 0
   stunDuration: 2
-  poison: 1
+  poison: 0
   poisonDuration: 6
   poisonDamage: 30
-  enemyConversion: 1
+  enemyConversion: 0
   conversionDuration: 10

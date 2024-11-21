@@ -9,79 +9,86 @@ using UnityEditor;
 [CreateAssetMenu]
 public class ScriptableGun : ScriptableObject
 {
-    [Header("Gun Type")]
-    public ActivationType activationType;
-    public ShootType shootType;
+    [Header("Gun Type")]  // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = | Gun Type | = = = = = = = = = = = = #
+    [Tooltip("How the gun will be activated by the player")]                                public ActivationType activationType;
+    [Tooltip("Method on which the gun will create attacks")]                                public ShootType shootType;
+    [Tooltip("Object spawned when using weapon, can be projectile or attack area")]         public GameObject attackObject;
+
+    [Header("Basic Stats")] // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = | Basic Stats  | = = = = = = = = = = #
+    [Tooltip("Base damage dealt to targets")]                                               public float damage = 1f;
+    [Tooltip("Time in seconds that the player must hold before firing")]                    public float timeBeforeFiring = 0;
+    [Tooltip("Time in seconds on which bullets fire, works with single shots")]             public float timeBetweenShots = 0.2f;
+    [Tooltip("Speed which projectiles travel (If relevant)")]                               public float projectileSpeed = 10;
+    [Tooltip("Distance on which instant hits can hit from")]                                public float hitDistance = 10;
+    [Tooltip("Time in seconds of the delay between area based attacks")]                    public float hitDelay = 0.2f;
+
+    [Header("Ammo")]  // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = | Ammo | = = = = = = = = = = = = = = #
+    [Tooltip("Infinite ammo that will not be drained, reloading still required")]           public bool infiniteAmmo;
+    [Tooltip("Max amount of ammo that can be stored at once")]                              public int ammoMax = 120;
+    [Tooltip("Infinite mag that does not need to reload")]                                  public bool infiniteMag;
+    [Tooltip("Max amount of ammo that can be loaded at once")]                              public int magMax = 20;
+    [Tooltip("Time it takes to reload in seconds")]                                         public float reloadTime = 2;
 
 
-    [Header("Basic Stats")]
-    public float damage = 1f;
-    public float timeBeforeFiring = 0;
-    public float timeBetweenShots = 0.2f;
-    public float projectileSpeed = 10;
-    public float hitDistance = 10;
-    public float hitDelay = 0.2f;
+    [Header("Special Attributes")]  // = = = = = = = = = = = = = = = = = = = = = = = = = = | Special Attributes | = = = = = = = #
+    [Tooltip("The gun will stop firing when overheated and must be cooled over time")]      public bool overheatable;
+    [Tooltip("")]public bool explosiveAmmo;
+    [Tooltip("Rings that spawn when hitting objects, will transfer damage and debuffs")]    public bool shockWaves;
+    [Tooltip("Attacks will push objects away from the position of the attack")]             public bool knockback;
+    [Tooltip("Projectile attacks will bounce off surfaces and objects")]                    public bool ricochet;
+    [Tooltip("Attacks will be created in unison with the given angle difference")]          public bool multishot;
+    [Tooltip("Attacks will create a chain of lighting which bounces between targets")]      public bool lightning;
+    [Tooltip("Attacks will automatically do their effects after a set period of time")]     public bool selfDestruct;
+    [Tooltip("Targets will viscerally explode on death")]                                   public bool goreyDeath;
 
-    [Header("Ammo")]
-    public bool infiniteAmmo;
-    public int ammoMax = 120;
-    public bool infiniteMag;
-    public int magMax = 20;
-    public float reloadTime = 2;
-    public float fuelConsumptionRate = 0.5f;
+    [Header("Overheat")]  // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = | Overheat | = = = = = = = = = = = = #
+    [Tooltip("Duration of time/amount of shots it takes to overheat the gun")]              public float timeToOverheat = 10;
+    [Tooltip("Time in seconds in which it takes to cool the gun")]                          public float timeToCool = 5;
 
+    [Header("Explosive")] // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = | Explosions | = = = = = = = = = = = #
+    [Tooltip("")] public float explosionArea = 3;                                           
 
-    [Header("Special Attributes")]
-    public bool overheatable;
-    public bool explosiveAmmo;
-    public bool shockWaves;
-    public bool knockback;
-    public bool ricochet;
-    public bool multishot;
-    public bool lightning;
-    public bool goreyDeath;
+    [Header("Shockwaves")]  // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = | Shockwaves | = = = = = = = = = = = #
+    [Tooltip("Size of shockwave, each number adds an extra larger ring")] [Range(3,23)]     public int shockWaveSize = 5;
 
-    [Header("Overheat")]
-    public float timeToOverheat = 10;
-    public float timeToCool = 5;
+    [Header("Knockback")] // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = | Knockback  | = = = = = = = = = = = #
+    [Tooltip("Power of knockback when hitting a target")]                                   public float knockbackPower = 10;
 
-    [Header("Explosive")]
-    public float explosionArea = 3;
+    [Header("Ricochet")]  // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = | Ricochet | = = = = = = = = = = = = #
+    [Tooltip("Amount of times the projectile can bounce of surfaces/targets")]              public int ricochetCount = 5;
 
-    [Header("Shockwaves")]
-    [Range(3,23)] public int shockWaveSize = 5;
+    [Header("Multishot")] // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = | Multishot  | = = = = = = = = = = = #
+    [Tooltip("Amount of attacks fired at once")]                                            public int split = 3;
+    [Tooltip("Whether each shot consumes ammo or only 1 is spent per group")]               public bool consumeExtraAmmo = true;
+    [Tooltip("Angle between each attack, groups of attacks are centered")]                  public float angleDifference = 45;
 
-    [Header("Knockback")]
-    public float knockbackPower = 10;
+    [Header("Lightning")] // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = | Lightning  | = = = = = = = = = = = #
+    [Tooltip("Lighting chains either hits X enemies total or targets X other enemies ")]    public bool exponentialLightning;
+    [Tooltip("Additive percentage that reduces lightning chain damage, will not continue if <= 0")]public float flatDiminishPercentage = 0.15f;
+    [Tooltip("Max targets the lightning will travel between")]                              public int maxChain = 4;
 
-    [Header("Ricochet")]
-    public int ricochetCount = 5;
+    [Header("Self Destruction")]  // = = = = = = = = = = = = = = = = = = = = = = = = = = = | Self Destruction | = = = = = = = = #
+    [Tooltip("Time in seconds that the object will self-destruct after")]                   public float selfDestructTime = 3;
+    [Tooltip("Only destroy on self-destruct, projectile will lose all speed if no ricochet")]public bool overrideNormalHit = false;
 
-    [Header("Multishot")]
-    public int split = 3;
-    public bool consumeExtraAmmo = true;
-    public float angleDifference = 45;
+    [Header("Debuffs")] // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = | Debuffs  | = = = = = = = = = = = = #
+    [Tooltip("Attacks will slow hit targets reducing movement speed and attacks")]          public bool frost;
+    [Tooltip("Duration on which the debuff is activate after hit")]                         public float frostDuration = 4;
+    [Tooltip("Amount of slowdown from a single stack")]                                     public float frostSlowdown = 0.15f;
 
-    [Header("Lightning")]
-    public bool exponentialLightning;
-    public float flatDiminishPercentage = 0.15f;
-    public int maxChain = 4;
+    [Tooltip("Enemies are unable to move or attack")]                                       public bool stun;
+    [Tooltip("Duration on which the debuff is activate after hit")]                         public float stunDuration = 2f;
 
+    [Tooltip("Enemies will rapidly lose health when at the max stack of 5")]                public bool poison;
+    [Tooltip("Duration on which the debuff is activate after hit")]                         public float poisonDuration = 6;
+    [Tooltip("Amount of damage enemies will take every 0.2 seconds")]                       public float poisonDamage = 30;
 
-    [Header("Debuffs")]
-    public bool frost;
-    public float frostDuration = 4;
-    public float frostSlowdown = 0.15f;
+    [Tooltip("Enemies will change target based on: Non-converted > Converted > Player")]    public bool enemyConversion;
+    [Tooltip("Duration on which the debuff is activate after hit")]                         public float conversionDuration = 10;
 
-    public bool stun;
-    public float stunDuration = 2f;
+    [Tooltip("Freeze enemies into a one-shot entity")]                                      public bool freeze = false;
+    [Tooltip("Duration on which the debuff is activate after hit")]                         public float freezeDuration = 3;
 
-    public bool poison;
-    public float poisonDuration = 6;
-    public float poisonDamage = 30;
-
-    public bool enemyConversion;
-    public float conversionDuration = 10;
 
 
     public enum ActivationType
@@ -94,8 +101,8 @@ public class ScriptableGun : ScriptableObject
     public enum ShootType
     {
         Single,
-        ClosestSingle,
-        Area,
+        DirectlyAtTarget,
+        BurstArea,
         ConstantArea
     }
 
@@ -110,34 +117,40 @@ public class ScriptableGun : ScriptableObject
             serializedObject.Update();
 
             string[] ignoreList;
-            ignoreList = new string[25];
+            ignoreList = new string[29];
 
-            //ignoreList[0] = ""
+            if (self.shootType != ShootType.DirectlyAtTarget) { ignoreList[0] = "hitDistance"; }
+            if (self.shootType != ShootType.Single) { ignoreList[1] = "projectileSpeed"; }
+            if (self.shootType != ShootType.ConstantArea) { ignoreList[2] = "hitDelay"; }
 
-            if (self.shootType != ShootType.ClosestSingle) { ignoreList[1] = "hitDistance"; }
-            if (self.shootType != ShootType.Single) { ignoreList[2] = "projectileSpeed"; }
-            if (self.shootType != ShootType.ConstantArea) { ignoreList[3] = "hitDelay"; }
+            if (self.infiniteAmmo) { ignoreList[3] = "ammoMax"; }
+            if (self.infiniteMag) { ignoreList[4] = "magMax"; ignoreList[5] = "reloadTime"; ignoreList[6] = "fuelConsumptionRate"; }
 
-            if (!self.explosiveAmmo) { ignoreList[4] = "explosionArea"; }
-            if (!self.shockWaves) { ignoreList[5] = "shockWaveSize"; }
+            if (!self.explosiveAmmo) { ignoreList[7] = "explosionArea"; }
+            if (!self.shockWaves) { ignoreList[8] = "shockWaveSize"; }
 
-            if (!self.overheatable) { ignoreList[6] = "timeToOverheat"; ignoreList[7] = "timeToCool"; }
-            if (!self.knockback) { ignoreList[8] = "knockbackPower"; }
-            if (!self.ricochet) { ignoreList[9] = "ricochetCount"; }
+            if (!self.overheatable) { ignoreList[9] = "timeToOverheat"; ignoreList[10] = "timeToCool"; }
+            if (!self.knockback) { ignoreList[11] = "knockbackPower"; }
+            if (!self.ricochet) { ignoreList[12] = "ricochetCount"; }
 
-            if (!self.multishot) { ignoreList[10] = "split"; ignoreList[11] = "consumeExtraAmmo"; ignoreList[12] = "angleDifference"; }
+            if (!self.multishot) { ignoreList[13] = "split"; ignoreList[14] = "consumeExtraAmmo"; ignoreList[15] = "angleDifference"; }
 
-            if (!self.lightning) { ignoreList[13] = "exponentialLightning"; ignoreList[14] = "flatDiminishPercentage"; ignoreList[15] = "maxChain"; }
-            if (self.exponentialLightning) { ignoreList[15] = "maxChain"; }
+            if (!self.lightning) { ignoreList[16] = "exponentialLightning"; ignoreList[17] = "flatDiminishPercentage"; ignoreList[18] = "maxChain"; }
+            if (self.exponentialLightning) { ignoreList[19] = "maxChain"; }
 
-            if (!self.frost) { ignoreList[16] = "frostDuration"; ignoreList[17] = "frostSlowdown"; }
-            if (!self.stun) { ignoreList[18] = "stunDuration"; }
-            if (!self.poison) { ignoreList[19] = "poisonDuration"; ignoreList[20] = "poisonDamage"; }
-            if (!self.enemyConversion) { ignoreList[21] = "conversionDuration"; }
+            if (!self.selfDestruct) { ignoreList[21] = "selfDestructTime"; ignoreList[22] = "overrideNormalHit"; }
 
-            if (self.infiniteAmmo) { ignoreList[22] = "ammoMax";}
-            if (self.infiniteMag) { ignoreList[23] = "magMax"; ignoreList[24] = "reloadTime"; ignoreList[0] = "fuelConsumptionRate"; }
+            if (self.shootType != ShootType.Single) 
+            {
+                self.selfDestruct = false; ignoreList[20] = "selfDestruct"; ignoreList[21] = "selfDestructTime"; ignoreList[22] = "overrideNormalHit";
+                ignoreList[23] = "ricochet"; ignoreList[12] = "ricochetCount";
+            }
 
+            if (!self.frost) { ignoreList[22] = "frostDuration"; ignoreList[23] = "frostSlowdown"; }
+            if (!self.stun) { ignoreList[24] = "stunDuration"; }
+            if (!self.poison) { ignoreList[25] = "poisonDuration"; ignoreList[26] = "poisonDamage"; }
+            if (!self.enemyConversion) { ignoreList[27] = "conversionDuration"; }
+            if (!self.freeze) { ignoreList[28] = "freezeDuration"; }
 
             DrawPropertiesExcluding(serializedObject, ignoreList);
 

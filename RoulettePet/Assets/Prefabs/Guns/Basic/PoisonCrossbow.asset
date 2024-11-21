@@ -10,29 +10,30 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1525ac9700617244bbdd0c6855059861, type: 3}
-  m_Name: BaseGun
+  m_Name: PoisonCrossbow
   m_EditorClassIdentifier: 
-  activationType: 1
+  activationType: 2
   shootType: 0
-  damage: 3
+  attackObject: {fileID: 0}
+  damage: 20
   timeBeforeFiring: 0
   timeBetweenShots: 0.2
-  projectileSpeed: 10
+  projectileSpeed: 15
   hitDistance: 10
   hitDelay: 0.2
   infiniteAmmo: 0
-  ammoMax: 9999
+  ammoMax: 60
   infiniteMag: 0
-  magMax: 20
+  magMax: 1
   reloadTime: 2
-  fuelConsumptionRate: 0.5
   overheatable: 0
   explosiveAmmo: 0
-  shockWaves: 1
-  knockback: 1
-  ricochet: 1
-  multishot: 1
+  shockWaves: 0
+  knockback: 0
+  ricochet: 0
+  multishot: 0
   lightning: 0
+  selfDestruct: 0
   goreyDeath: 0
   timeToOverheat: 8
   timeToCool: 5
@@ -41,18 +42,20 @@ MonoBehaviour:
   knockbackPower: 200
   ricochetCount: 5
   split: 3
-  consumeExtraAmmo: 0
+  consumeExtraAmmo: 1
   angleDifference: 45
   exponentialLightning: 0
   flatDiminishPercentage: 0.15
   maxChain: 4
-  frost: 1
+  selfDestructTime: 3
+  overrideNormalHit: 0
+  frost: 0
   frostDuration: 4
   frostSlowdown: 0.15
-  stun: 1
+  stun: 0
   stunDuration: 2
   poison: 1
   poisonDuration: 6
   poisonDamage: 30
-  enemyConversion: 1
+  enemyConversion: 0
   conversionDuration: 10

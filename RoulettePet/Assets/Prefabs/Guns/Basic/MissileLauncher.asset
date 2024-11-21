@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1525ac9700617244bbdd0c6855059861, type: 3}
+  m_Name: MissileLauncher
+  m_EditorClassIdentifier: 
+  activationType: 0
+  shootType: 0
+  damage: 75
+  timeBeforeFiring: 0
+  timeBetweenShots: 1
+  projectileSpeed: 6
+  hitDistance: 10
+  hitDelay: 0.2
+  infiniteAmmo: 0
+  ammoMax: 30
+  infiniteMag: 0
+  magMax: 2
+  reloadTime: 3
+  overheatable: 0
+  explosiveAmmo: 1
+  shockWaves: 1
+  knockback: 0
+  ricochet: 0
+  multishot: 0
+  lightning: 0
+  goreyDeath: 0
+  timeToOverheat: 8
+  timeToCool: 5
+  explosionArea: 3
+  shockWaveSize: 16
+  knockbackPower: 200
+  ricochetCount: 5
+  split: 3
+  consumeExtraAmmo: 1
+  angleDifference: 45
+  exponentialLightning: 0
+  flatDiminishPercentage: 0.15
+  maxChain: 4
+  frost: 0
+  frostDuration: 4
+  frostSlowdown: 0.15
+  stun: 0
+  stunDuration: 2
+  poison: 0
+  poisonDuration: 6
+  poisonDamage: 30
+  enemyConversion: 0
+  conversionDuration: 10
