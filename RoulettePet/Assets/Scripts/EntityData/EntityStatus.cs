@@ -72,12 +72,12 @@ public class EntityStatus : MonoBehaviour
     }
 
 
-    public void TakeDamage(float damage)
+    public void TakeDamage(float damage, Color textColour)
     {
         health -= damage;
 
-        //DamageText newDamageText = Instantiate(damageText, transform.position, Quaternion.identity).GetComponent<DamageText>();
-        //newDamageText.UpdateDamageText(damage.ToString());
+        DamageText newDamageText = Instantiate(damageText, transform.position + new Vector3(0.5f,0,0), Quaternion.identity).GetComponent<DamageText>();
+        newDamageText.UpdateDamageText(-damage, textColour);
 
         if (health <= 0) { KillEntity(); }
     }
@@ -123,7 +123,7 @@ public class EntityStatus : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(0.2f);
-            TakeDamage(poisonDamage);
+            TakeDamage(poisonDamage, Color.green);
         }
     }
 

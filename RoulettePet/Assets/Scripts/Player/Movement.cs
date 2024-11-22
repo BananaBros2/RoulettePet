@@ -21,6 +21,10 @@ public class Movement : MonoBehaviour
 
         rb.AddForce(new Vector2(horizontalInput, verticalInput ).normalized * Time.deltaTime * 1000 * moveSpeed);
 
-        rb.velocity = new Vector2(rb.velocity.x * 0.8f, rb.velocity.y * 0.8f);
+    }
+
+    private void FixedUpdate()
+    {
+        rb.velocity = new Vector2(rb.velocity.x * 0.5f, rb.velocity.y * 0.5f);
     }
 }

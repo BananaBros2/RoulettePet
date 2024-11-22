@@ -92,8 +92,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 45
+  m_fontSizeBase: 45
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -143,10 +143,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4561660241504226981}
+  - component: {fileID: 4561736249630623511}
   - component: {fileID: 6283078392156062312}
   - component: {fileID: 7010049509237116041}
   - component: {fileID: 2290022267863035084}
-  - component: {fileID: 4561736249630623511}
   m_Layer: 5
   m_Name: DamageTextCanvas
   m_TagString: Untagged
@@ -174,6 +174,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &4561736249630623511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3033938120677610961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2976d3723cdb11c43b3a6c0a735f5ac0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageTMPText: {fileID: 9169959560032536736}
+  textSpeed: 0.5
+  timeUntilRemove: 0.5
 --- !u!223 &6283078392156062312
 Canvas:
   m_ObjectHideFlags: 0
@@ -237,17 +252,3 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &4561736249630623511
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3033938120677610961}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2976d3723cdb11c43b3a6c0a735f5ac0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textSpeed: 10
-  timeUntilRemove: 1
