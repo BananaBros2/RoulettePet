@@ -138,7 +138,7 @@ public class AttackScript : MonoBehaviour
 
     public void HitTarget(EntityStatus target)
     {
-        target.TakeDamage(damage);
+        target.TakeDamage(damage, Color.white);
         TransferDebuffs(target);
 
         if (knockbackPower != 0) { target.Knockback(transform, knockbackPower); }
