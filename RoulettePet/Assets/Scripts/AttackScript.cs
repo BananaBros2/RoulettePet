@@ -5,8 +5,12 @@ using UnityEngine;
 public class AttackScript : MonoBehaviour
 {
     private Rigidbody2D rb;
+    public Sprite[] randomSprite;
+
     public float speed = 1;
     public float damage = 1;
+
+    public bool wavyProjectile = true;
 
     public float explosiveArea = 0;
     public bool createShockwave = false;
@@ -28,6 +32,8 @@ public class AttackScript : MonoBehaviour
     public float poisonDamage = 0;
     public float conversionDuration = 0;
 
+    //private float wavePosition = 45f;
+
     public Vector2 directionalVelocity;
 
     public GameObject shockwaveObject;
@@ -38,12 +44,25 @@ public class AttackScript : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+
+        if(randomSprite.Length > 0)
+        {
+            System.Random rand = new System.Random();
+            transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = randomSprite[rand.Next(0,randomSprite.Length-1)];
+        }
+        
+
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
         rb.velocity = transform.right * speed;
+        //if (wavyProjectile)
+        //{
+        //    wavePosition += speed/30;
+        //    rb.velocity = rb.velocity + new Vector2(transform.up.x * Mathf.Sin(wavePosition) * speed, transform.up.y * Mathf.Sin(wavePosition) * speed);
+        //}
         triggerEnterDelay -= Time.fixedDeltaTime;
     }
     
@@ -53,13 +72,11 @@ public class AttackScript : MonoBehaviour
         speed = newSpeed;
         damage = newDamage;
     }
-    public void SetSpecialProperties(float newExplosiveArea, bool newShockwaves, int newShockwavesSize,
+    public void SetSpecialProperties(bool newShockwaves, int newShockwavesSize,
                                      float newKnockbackPower, int newRicochetCount,
                                      bool newExponentiLightning, float newDiminishLightning, int newMaxChain,
                                      bool addGore)
     {
-        explosiveArea = newExplosiveArea;
-
         createShockwave = newShockwaves;
         shockwavesSize = newShockwavesSize;
 
@@ -93,11 +110,10 @@ public class AttackScript : MonoBehaviour
 
             if (triggerEnterDelay < 0) { HitTarget(target); }
 
-
             if (ricochets > 0 && triggerEnterDelay < 0) { RicochetBounce(collision); }
-            else if (ricochets < 0) { Destroy(this.gameObject); }
+            else if (ricochets < 1) { Destroy(this.gameObject); }
 
-            triggerEnterDelay = 0.2f;
+            triggerEnterDelay = 0.05f;
         }
         catch
         {

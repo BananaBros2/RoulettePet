@@ -65,9 +65,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81ae79a93cab8bf4784f8e98993144c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDead: 0
+  invincibilityFrames: 1
   debuffIconUpdator: {fileID: 7409701237865789880}
   damageText: {fileID: 3033938120677610961, guid: d06e359c52b17c04d9440466a0a7713d, type: 3}
-  health: 100
+  health: 50
   frostResistance: 0
   frostStack: 0
   frostEffectiveness: 0

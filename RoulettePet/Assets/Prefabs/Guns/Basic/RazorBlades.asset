@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   activationType: 1
   shootType: 0
+  weaponPrefab: {fileID: 9010594303139797588, guid: af525ca3a4169b9419b4dba4355659f6, type: 3}
+  attackObject: {fileID: 9209801138886082010, guid: 5d2e08fa6dee9e84fa5c36b29cadf10d, type: 3}
   damage: 20
   timeBeforeFiring: 0
   timeBetweenShots: 1
@@ -26,16 +28,15 @@ MonoBehaviour:
   magMax: 40
   reloadTime: 3
   overheatable: 0
-  explosiveAmmo: 0
   shockWaves: 0
   knockback: 0
   ricochet: 1
   multishot: 0
   lightning: 0
+  selfDestruct: 0
   goreyDeath: 0
   timeToOverheat: 8
   timeToCool: 5
-  explosionArea: 3
   shockWaveSize: 23
   knockbackPower: 200
   ricochetCount: 5
@@ -45,6 +46,8 @@ MonoBehaviour:
   exponentialLightning: 0
   flatDiminishPercentage: 0.15
   maxChain: 4
+  selfDestructTime: 3
+  overrideNormalHit: 0
   frost: 0
   frostDuration: 4
   frostSlowdown: 0.15
@@ -55,3 +58,5 @@ MonoBehaviour:
   poisonDamage: 30
   enemyConversion: 0
   conversionDuration: 10
+  freeze: 0
+  freezeDuration: 3

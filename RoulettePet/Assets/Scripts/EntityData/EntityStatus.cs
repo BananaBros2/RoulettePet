@@ -2,12 +2,25 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EntityStatus : MonoBehaviour
 {
+    private bool playerEntity;
     public DebuffIconsScript debuffIconUpdator;
     public GameObject damageText;
-    public float health = 100;
+    public Image healthBarGreen;
+    public Image healthBarWhite;
+    public float maxHealth = 50;
+    private float health = 50;
+    private bool aboutToDie;
+    public float enemyDamage = 15;
+
+    public bool isDead = false;
+    public float invincibilityFrames = 1;
+    private float curInvincibilityFrames = 0;
+
+
 
     public bool frostResistance = false;
     public int frostStack = 0;
@@ -29,8 +42,21 @@ public class EntityStatus : MonoBehaviour
     public bool converted = false;
     public float convertedTimeRemaining = 0;
 
+
+    private void Start()
+    {
+        health = maxHealth;
+
+        if(transform.TryGetComponent<Movement>(out Movement isPlayer))
+        {
+            playerEntity = true;
+        }
+    }
+
     private void FixedUpdate()
     {
+        curInvincibilityFrames -= 1;
+
         frostTimeRemaining -= Time.fixedDeltaTime; ;
         if(frostTimeRemaining < 0 && frostStack > 0)
         {
@@ -71,16 +97,72 @@ public class EntityStatus : MonoBehaviour
 
     }
 
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (playerEntity && collision.transform.CompareTag("Enemy"))
+        {
+            TakeDamage(collision.transform.GetComponent<EntityStatus>().enemyDamage, Color.red);
+        }
+    }
 
     public void TakeDamage(float damage, Color textColour)
     {
+        if(curInvincibilityFrames > 0) { return; }
+        curInvincibilityFrames = invincibilityFrames;
+
         health -= damage;
 
         DamageText newDamageText = Instantiate(damageText, transform.position + new Vector3(0.5f,0,0), Quaternion.identity).GetComponent<DamageText>();
         newDamageText.UpdateDamageText(-damage, textColour);
 
+        if (healthBarGreen != null)
+        {
+            healthBarGreen.fillAmount = health / maxHealth;
+            if(healthBarWhite != null && !aboutToDie)
+            {
+                StopCoroutine(HealthbarDrain());
+                StartCoroutine(HealthbarDrain());
+
+                if (playerEntity) { return; }
+            }
+        }
+
         if (health <= 0) { KillEntity(); }
     }
+
+    IEnumerator HealthbarDrain()
+    {
+        if(healthBarGreen.fillAmount <= 0)
+        {
+            aboutToDie = true;
+            StartCoroutine(FlashTemporaryHealth());
+        }
+
+        yield return new WaitForSeconds(0.8f);
+
+        while (healthBarWhite.fillAmount > healthBarGreen.fillAmount)
+        {
+            float drainMult = Mathf.Clamp(healthBarWhite.fillAmount*2 + 0.02f, 0.05f, 1);
+            healthBarWhite.fillAmount = Mathf.Max(healthBarWhite.fillAmount - 0.01f * drainMult, healthBarGreen.fillAmount);
+            yield return new WaitForSeconds(0.02f);
+        }
+
+        if (playerEntity && healthBarGreen.fillAmount <= 0) { KillEntity(); }
+
+    }
+
+    IEnumerator FlashTemporaryHealth()
+    {
+        while (health <= 0)
+        {
+            healthBarWhite.color = Color.yellow;
+            yield return new WaitForSeconds(0.2f);
+
+            healthBarWhite.color = Color.white;
+            yield return new WaitForSeconds(0.2f);
+        }
+    }
+
 
     public void KillEntity()
     {

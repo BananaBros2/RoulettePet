@@ -139,7 +139,7 @@ TextureImporter:
         width: 10
         height: 10
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -147,6 +147,720 @@ TextureImporter:
       bones: []
       spriteID: fa27bd9ce05bb444aaca0da2baedf5bb
       internalID: -677400724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Machinegun
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 197
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cc66d791e858f44db35fda1251467d1
+      internalID: 1392367982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Machinegun_Selected
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 186
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8801af0f3b5a2a54388f9181005a9073
+      internalID: 1812784364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 197
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22aefbb874686e847a6b7009d463bf67
+      internalID: -924571221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun_Selected
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 186
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d152d83a65263242992f1b91704f866
+      internalID: 910933253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OrbOfFire
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 197
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15ce3a326e97a6843aeb34e8934fe182
+      internalID: -1966153899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OrbOfFire_Selected
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 186
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac8ba5909dea21641b482fa688594f7a
+      internalID: -785942114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flamethrower
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 197
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b5264f81ee02604eaf8c6ff2733d86b
+      internalID: -1551699541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flamethrower_Selected
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 186
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d97380f986f16f47aaa6efde6e859d5
+      internalID: -1646820072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MissileLauncher
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 197
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aef09aadc598fa746a51476e8b84da17
+      internalID: -984749128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MissileLauncher_Selected
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 186
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7319ecbc568f3cb4494698a3d778d9dd
+      internalID: -276221273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Minigun
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 197
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96f2ae54b2bad4e4e91dc40d3505e2f4
+      internalID: 220602443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Minigun_Selected
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 186
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 089ba7da86d7eac44918ae1d4ba134a7
+      internalID: -1106143208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chainsaw
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 197
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd5d3fa948b38584aafae0019f6e4fdf
+      internalID: 1097963246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chainsaw_Selected
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 186
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 807aa1fb1693e674dbbd66832f0824de
+      internalID: -686835878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RazorBlades
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 197
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8373ad14de3ad24ebe3492b3fe026b7
+      internalID: -1414587897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RazorBlades_Selected
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 186
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b75a682d25f28a4eb1cc44eb858c950
+      internalID: 310888981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrostGun
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 197
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1287a24a5d1de2f48887e637ab195cea
+      internalID: 155233130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrostGun_Selected
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 186
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cde442315031bcc439f317eb38690869
+      internalID: -1683331123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PunchingGloveBox
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 197
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be4f340d13668914886abd2ff9319db6
+      internalID: 295132777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PunchingGloveBox_Selected
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 186
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 979e6b7285fe17f4dad71edaf2c2172b
+      internalID: 359687243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChainLightningA
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 197
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3032efe0d1b6ab24e91279df43bbc278
+      internalID: -2088377912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChainLightningB
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 197
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bf9d6fa90971504eab6e787056a081f
+      internalID: -1897231503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChainLightningA_Selected
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 186
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f3743d0512646f45b44a94a6986feff
+      internalID: -1573703145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChainLightningB_Selected
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 186
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95db3d65df110a04b9abfa330e278796
+      internalID: -1372060089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CryoBlast
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 175
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8a4890968518854ea06036a1f46c8f3
+      internalID: 743286510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CryoBlast_Selected
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 164
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a1358d226501414e803a1ea26fea7d3
+      internalID: -1652282717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grenade
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 175
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7757bd1bb7580a74e858fec03044eb1a
+      internalID: -1698851931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grenade_Selected
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 164
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22b5d6db4f7001947a5aa36524a95389
+      internalID: 29153503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PoisonCrossbow
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 175
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e481e6698f1f4242a9edc0ce56ac8d2
+      internalID: -1908601752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PoisonCrossbow_Selected
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 164
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c4aadba41fddf04d965a42f92212d63
+      internalID: -1657869580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MindBlastEmission
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 175
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37983e6faece0e347b0c877f8339fd41
+      internalID: 383460078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MindBlastEmission_Selected
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 164
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33f83152a653d394f9b9ab680ced1c7e
+      internalID: 7846222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Empty_Selected
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 131
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93c3abb3d3140cd4b890642e072e29aa
+      internalID: 148650663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pointer
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 124
+        width: 8
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c90bafe1fc7532a42ae99432e4bf6744
+      internalID: -940196241
       vertices: []
       indices: 
       edges: []
@@ -162,8 +876,42 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      ChainLightningA: -2088377912
+      ChainLightningA_Selected: -1573703145
+      ChainLightningB: -1897231503
+      ChainLightningB_Selected: -1372060089
+      Chainsaw: 1097963246
+      Chainsaw_Selected: -686835878
+      CryoBlast: 743286510
+      CryoBlast_Selected: -1652282717
       Empty: -677400724
+      Empty_Selected: 148650663
+      Flamethrower: -1551699541
+      Flamethrower_Selected: -1646820072
+      FrostGun: 155233130
+      FrostGun_Selected: -1683331123
+      Grenade: -1698851931
+      Grenade_Selected: 29153503
       GunInventory_0: 983307649
+      Machinegun: 1392367982
+      Machinegun_Selected: 1812784364
+      MindBlastEmission: 383460078
+      MindBlastEmission_Selected: 7846222
+      Minigun: 220602443
+      Minigun_Selected: -1106143208
+      MissileLauncher: -984749128
+      MissileLauncher_Selected: -276221273
+      OrbOfFire: -1966153899
+      OrbOfFire_Selected: -785942114
+      Pointer: -940196241
+      PoisonCrossbow: -1908601752
+      PoisonCrossbow_Selected: -1657869580
+      PunchingGloveBox: 295132777
+      PunchingGloveBox_Selected: 359687243
+      RazorBlades: -1414587897
+      RazorBlades_Selected: 310888981
+      Shotgun: -924571221
+      Shotgun_Selected: 910933253
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

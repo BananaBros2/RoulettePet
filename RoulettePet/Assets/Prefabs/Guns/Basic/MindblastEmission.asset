@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   activationType: 0
   shootType: 2
+  weaponPrefab: {fileID: 9010594303139797588, guid: df79b8013cf2d0c45bb3690eba61fde0, type: 3}
   attackObject: {fileID: 0}
   damage: 0
   timeBeforeFiring: 2
@@ -59,3 +60,5 @@ MonoBehaviour:
   poisonDamage: 30
   enemyConversion: 1
   conversionDuration: 10
+  freeze: 0
+  freezeDuration: 3

@@ -10,10 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1525ac9700617244bbdd0c6855059861, type: 3}
-  m_Name: B-ChainLightningBasic 1
+  m_Name: B-ChainLightningBasic
   m_EditorClassIdentifier: 
   activationType: 0
   shootType: 1
+  weaponPrefab: {fileID: 9010594303139797588, guid: 89100ae35d0207c4499435e7f44c4444, type: 3}
   attackObject: {fileID: 0}
   damage: 30
   timeBeforeFiring: 0
@@ -33,6 +34,7 @@ MonoBehaviour:
   ricochet: 0
   multishot: 0
   lightning: 1
+  selfDestruct: 0
   goreyDeath: 0
   timeToOverheat: 8
   timeToCool: 5
@@ -46,6 +48,8 @@ MonoBehaviour:
   exponentialLightning: 1
   flatDiminishPercentage: 0.15
   maxChain: 3
+  selfDestructTime: 3
+  overrideNormalHit: 0
   frost: 0
   frostDuration: 4
   frostSlowdown: 0.15
@@ -56,3 +60,5 @@ MonoBehaviour:
   poisonDamage: 30
   enemyConversion: 0
   conversionDuration: 10
+  freeze: 0
+  freezeDuration: 3

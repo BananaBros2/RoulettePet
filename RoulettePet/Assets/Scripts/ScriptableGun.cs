@@ -12,7 +12,9 @@ public class ScriptableGun : ScriptableObject
     [Header("Gun Type")]  // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = | Gun Type | = = = = = = = = = = = = #
     [Tooltip("How the gun will be activated by the player")]                                public ActivationType activationType;
     [Tooltip("Method on which the gun will create attacks")]                                public ShootType shootType;
+    [Tooltip("Prefab used to determine visual style and attack spawn location")]            public GameObject weaponPrefab;
     [Tooltip("Object spawned when using weapon, can be projectile or attack area")]         public GameObject attackObject;
+
 
     [Header("Basic Stats")] // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = | Basic Stats  | = = = = = = = = = = #
     [Tooltip("Base damage dealt to targets")]                                               public float damage = 1f;
@@ -32,7 +34,7 @@ public class ScriptableGun : ScriptableObject
 
     [Header("Special Attributes")]  // = = = = = = = = = = = = = = = = = = = = = = = = = = | Special Attributes | = = = = = = = #
     [Tooltip("The gun will stop firing when overheated and must be cooled over time")]      public bool overheatable;
-    [Tooltip("")]public bool explosiveAmmo;
+    //[Tooltip("")]public bool explosiveAmmo; //Replaced by shockwaves for now
     [Tooltip("Rings that spawn when hitting objects, will transfer damage and debuffs")]    public bool shockWaves;
     [Tooltip("Attacks will push objects away from the position of the attack")]             public bool knockback;
     [Tooltip("Projectile attacks will bounce off surfaces and objects")]                    public bool ricochet;
@@ -46,7 +48,7 @@ public class ScriptableGun : ScriptableObject
     [Tooltip("Time in seconds in which it takes to cool the gun")]                          public float timeToCool = 5;
 
     [Header("Explosive")] // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = | Explosions | = = = = = = = = = = = #
-    [Tooltip("")] public float explosionArea = 3;                                           
+    //[Tooltip("")] public float explosionArea = 3; //Replaced by shockwaves for now
 
     [Header("Shockwaves")]  // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = | Shockwaves | = = = = = = = = = = = #
     [Tooltip("Size of shockwave, each number adds an extra larger ring")] [Range(3,23)]     public int shockWaveSize = 5;
@@ -126,7 +128,7 @@ public class ScriptableGun : ScriptableObject
             if (self.infiniteAmmo) { ignoreList[3] = "ammoMax"; }
             if (self.infiniteMag) { ignoreList[4] = "magMax"; ignoreList[5] = "reloadTime"; ignoreList[6] = "fuelConsumptionRate"; }
 
-            if (!self.explosiveAmmo) { ignoreList[7] = "explosionArea"; }
+            //if (!self.explosiveAmmo) { ignoreList[7] = "explosionArea"; }
             if (!self.shockWaves) { ignoreList[8] = "shockWaveSize"; }
 
             if (!self.overheatable) { ignoreList[9] = "timeToOverheat"; ignoreList[10] = "timeToCool"; }

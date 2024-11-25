@@ -33,13 +33,30 @@ public class EnemyMovement : MonoBehaviour
         }
         else if (!status.converted)
         {
-            target = player;
+            try
+            {
+                target = player;
+                if (player.GetComponent<EntityStatus>().isDead){ target = null; return; }
+                
+            }
+            catch
+            {
+                return;
+            }
+            
         }
 
         float speed = movementSpeed * status.frostSlowPercentage;
 
-        transform.position = Vector2.MoveTowards(transform.position, target.transform.position, speed);
-        //rb.   A ddForce((target.transform.position - transform.position).normalized * speed);
+        try
+        {
+            transform.position = Vector2.MoveTowards(transform.position, target.transform.position, speed);
+        }
+        catch
+        {
+            // Object has been destroyed or is not available
+        }
+
     }
 
     public GameObject LocateNewTarget()

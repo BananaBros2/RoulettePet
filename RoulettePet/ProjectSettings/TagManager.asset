@@ -50,3 +50,6 @@ TagManager:
   - name: Debuffs
     uniqueID: 133181793
     locked: 0
+  - name: Important
+    uniqueID: 2665859785
+    locked: 0

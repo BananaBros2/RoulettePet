@@ -40,7 +40,6 @@ public class DamageText : MonoBehaviour
 
     public void UpdateDamageText(float damageValue, Color textColour)
     {
-        print(damageValue);
         damageTMPText.text = (Mathf.Round(damageValue*10)/10).ToString();
         damageTMPText.color = textColour;
     }

@@ -14,10 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   activationType: 1
   shootType: 0
+  attackObject: {fileID: 0}
   damage: 3
   timeBeforeFiring: 0
   timeBetweenShots: 0.2
-  projectileSpeed: 10
+  projectileSpeed: 8
   hitDistance: 10
   hitDelay: 0.2
   infiniteAmmo: 0
@@ -25,14 +26,14 @@ MonoBehaviour:
   infiniteMag: 0
   magMax: 20
   reloadTime: 2
-  fuelConsumptionRate: 0.5
   overheatable: 0
   explosiveAmmo: 0
   shockWaves: 1
   knockback: 1
   ricochet: 1
-  multishot: 1
+  multishot: 0
   lightning: 0
+  selfDestruct: 0
   goreyDeath: 0
   timeToOverheat: 8
   timeToCool: 5
@@ -46,6 +47,8 @@ MonoBehaviour:
   exponentialLightning: 0
   flatDiminishPercentage: 0.15
   maxChain: 4
+  selfDestructTime: 3
+  overrideNormalHit: 0
   frost: 1
   frostDuration: 4
   frostSlowdown: 0.15
@@ -56,3 +59,5 @@ MonoBehaviour:
   poisonDamage: 30
   enemyConversion: 1
   conversionDuration: 10
+  freeze: 0
+  freezeDuration: 3

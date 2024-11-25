@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   activationType: 0
   shootType: 0
+  weaponPrefab: {fileID: 9010594303139797588, guid: 9e44e34b88b77af4f8653cbd63aab029, type: 3}
+  attackObject: {fileID: 0}
   damage: 15
   timeBeforeFiring: 0
   timeBetweenShots: 2
@@ -32,6 +34,7 @@ MonoBehaviour:
   ricochet: 0
   multishot: 0
   lightning: 0
+  selfDestruct: 0
   goreyDeath: 0
   timeToOverheat: 8
   timeToCool: 5
@@ -45,6 +48,8 @@ MonoBehaviour:
   exponentialLightning: 0
   flatDiminishPercentage: 0.15
   maxChain: 4
+  selfDestructTime: 3
+  overrideNormalHit: 0
   frost: 0
   frostDuration: 4
   frostSlowdown: 0.15
@@ -55,3 +60,5 @@ MonoBehaviour:
   poisonDamage: 30
   enemyConversion: 0
   conversionDuration: 10
+  freeze: 0
+  freezeDuration: 3

@@ -18,6 +18,7 @@ public class GunScript : MonoBehaviour
 
     public GameObject bullet;
 
+    System.Random randomizer;
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +26,8 @@ public class GunScript : MonoBehaviour
         ammoLeft = gunClass.ammoMax;
         ammoLeftInMag = gunClass.magMax;
         UpdateAmmoCounter();
+
+        randomizer = new System.Random();
     }
 
     // Update is called once per frame
@@ -167,8 +170,11 @@ public class GunScript : MonoBehaviour
 
     public void ShootProjectile(ScriptableGun gun, float rotationOffset = 0, bool consumeAmmo = true)
     {
-        GameObject newBullet = Instantiate(bullet, transform.position, gunObject.transform.rotation);
-        newBullet.transform.Rotate(0, 0, rotationOffset);
+        GameObject newBullet = Instantiate(gun.attackObject, gunObject.transform.GetChild(0).transform.position, gunObject.transform.rotation);
+
+        float randomOffset = (float)randomizer.Next(-100, 100) / 100;
+        print(randomOffset);
+        newBullet.transform.Rotate(0, 0, rotationOffset + randomOffset);
 
         if (!gun.infiniteMag && consumeAmmo) // Do not consume if has infinite mag ammo or if trigged not to
         {
@@ -185,7 +191,6 @@ public class GunScript : MonoBehaviour
     public void TransferSpecials(ScriptableGun gun, AttackScript bulletProperties)
     {
         bulletProperties.SetSpecialProperties(
-            gun.explosiveAmmo ? gun.explosionArea : 0,
             gun.shockWaves, gun.shockWaveSize,
             gun.knockback ? gun.knockbackPower : 0,
             gun.ricochet ? gun.ricochetCount : 0,
@@ -254,4 +259,12 @@ public class GunScript : MonoBehaviour
         ammoCounterText.text = (ammoLeftInMag.ToString() + "/" + ammoLeft.ToString());
     }
 
+
+
+
+    public void ChangeWeapon(ScriptableGun newGun)
+    {
+        Destroy(gunObject.gameObject);
+        gunObject = Instantiate(newGun.weaponPrefab, transform);
+    }
 }
