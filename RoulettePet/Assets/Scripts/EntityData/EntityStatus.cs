@@ -97,6 +97,7 @@ public class EntityStatus : MonoBehaviour
 
     }
 
+
     private void OnCollisionStay2D(Collision2D collision)
     {
         if (playerEntity && collision.transform.CompareTag("Enemy"))
@@ -112,7 +113,7 @@ public class EntityStatus : MonoBehaviour
 
         health -= damage;
 
-        DamageText newDamageText = Instantiate(damageText, transform.position + new Vector3(0.5f,0,0), Quaternion.identity).GetComponent<DamageText>();
+        DamageText newDamageText = Instantiate(damageText, transform.position + new Vector3(0,0.5f,0), Quaternion.identity).GetComponent<DamageText>();
         newDamageText.UpdateDamageText(-damage, textColour);
 
         if (healthBarGreen != null)
@@ -138,7 +139,7 @@ public class EntityStatus : MonoBehaviour
             StartCoroutine(FlashTemporaryHealth());
         }
 
-        yield return new WaitForSeconds(0.8f);
+        yield return new WaitForSeconds(0.6f);
 
         while (healthBarWhite.fillAmount > healthBarGreen.fillAmount)
         {

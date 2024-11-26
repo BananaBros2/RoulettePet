@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1525ac9700617244bbdd0c6855059861, type: 3}
-  m_Name: MachineGun#
+  m_Name: MachineGun
   m_EditorClassIdentifier: 
   activationType: 1
   shootType: 0
@@ -20,6 +20,7 @@ MonoBehaviour:
   timeBeforeFiring: 0
   timeBetweenShots: 0.1
   projectileSpeed: 12
+  projectileSpread: 8
   hitDistance: 10
   hitDelay: 0.2
   infiniteAmmo: 0
@@ -29,7 +30,7 @@ MonoBehaviour:
   reloadTime: 2
   overheatable: 0
   shockWaves: 0
-  knockback: 0
+  knockback: 1
   ricochet: 0
   multishot: 0
   lightning: 0
@@ -38,7 +39,7 @@ MonoBehaviour:
   timeToOverheat: 8
   timeToCool: 5
   shockWaveSize: 23
-  knockbackPower: 200
+  knockbackPower: 20
   ricochetCount: 5
   split: 3
   consumeExtraAmmo: 1

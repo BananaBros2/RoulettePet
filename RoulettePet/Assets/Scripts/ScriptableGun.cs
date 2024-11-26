@@ -13,14 +13,15 @@ public class ScriptableGun : ScriptableObject
     [Tooltip("How the gun will be activated by the player")]                                public ActivationType activationType;
     [Tooltip("Method on which the gun will create attacks")]                                public ShootType shootType;
     [Tooltip("Prefab used to determine visual style and attack spawn location")]            public GameObject weaponPrefab;
-    [Tooltip("Object spawned when using weapon, can be projectile or attack area")]         public GameObject attackObject;
-
+    [Tooltip("Object spawned when using weapon")]                                           public GameObject attackObject;
+    [Tooltip("Replace area collision points that will hit targets")]                        public Vector2[] newAreaPoints;
 
     [Header("Basic Stats")] // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = | Basic Stats  | = = = = = = = = = = #
     [Tooltip("Base damage dealt to targets")]                                               public float damage = 1f;
     [Tooltip("Time in seconds that the player must hold before firing")]                    public float timeBeforeFiring = 0;
     [Tooltip("Time in seconds on which bullets fire, works with single shots")]             public float timeBetweenShots = 0.2f;
     [Tooltip("Speed which projectiles travel (If relevant)")]                               public float projectileSpeed = 10;
+    [Tooltip("Cone of spread that attack object may alter by")]                             public int projectileSpread = 0;
     [Tooltip("Distance on which instant hits can hit from")]                                public float hitDistance = 10;
     [Tooltip("Time in seconds of the delay between area based attacks")]                    public float hitDelay = 0.2f;
 
@@ -42,6 +43,7 @@ public class ScriptableGun : ScriptableObject
     [Tooltip("Attacks will create a chain of lighting which bounces between targets")]      public bool lightning;
     [Tooltip("Attacks will automatically do their effects after a set period of time")]     public bool selfDestruct;
     [Tooltip("Targets will viscerally explode on death")]                                   public bool goreyDeath;
+    [Tooltip("Projectiles will travel in a (sin) wave-formation")]                          public bool wavyProjectile;
 
     [Header("Overheat")]  // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = | Overheat | = = = = = = = = = = = = #
     [Tooltip("Duration of time/amount of shots it takes to overheat the gun")]              public float timeToOverheat = 10;
@@ -72,6 +74,10 @@ public class ScriptableGun : ScriptableObject
     [Header("Self Destruction")]  // = = = = = = = = = = = = = = = = = = = = = = = = = = = | Self Destruction | = = = = = = = = #
     [Tooltip("Time in seconds that the object will self-destruct after")]                   public float selfDestructTime = 3;
     [Tooltip("Only destroy on self-destruct, projectile will lose all speed if no ricochet")]public bool overrideNormalHit = false;
+
+    [Header("Wavy Bullets")]  // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = | Wavy Bullets | = = = = = = = = = = #
+    [Tooltip("How agressive the projectiles will warble")]                                  public float wavyness = 1;
+
 
     [Header("Debuffs")] // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = | Debuffs  | = = = = = = = = = = = = #
     [Tooltip("Attacks will slow hit targets reducing movement speed and attacks")]          public bool frost;
@@ -119,11 +125,14 @@ public class ScriptableGun : ScriptableObject
             serializedObject.Update();
 
             string[] ignoreList;
-            ignoreList = new string[29];
+            ignoreList = new string[31];
 
             if (self.shootType != ShootType.DirectlyAtTarget) { ignoreList[0] = "hitDistance"; }
             if (self.shootType != ShootType.Single) { ignoreList[1] = "projectileSpeed"; }
             if (self.shootType != ShootType.ConstantArea) { ignoreList[2] = "hitDelay"; }
+
+            if (!(self.shootType == ShootType.BurstArea || self.shootType == ShootType.ConstantArea))
+            { ignoreList[7] = "newAreaPoints"; }
 
             if (self.infiniteAmmo) { ignoreList[3] = "ammoMax"; }
             if (self.infiniteMag) { ignoreList[4] = "magMax"; ignoreList[5] = "reloadTime"; ignoreList[6] = "fuelConsumptionRate"; }
@@ -142,11 +151,15 @@ public class ScriptableGun : ScriptableObject
 
             if (!self.selfDestruct) { ignoreList[21] = "selfDestructTime"; ignoreList[22] = "overrideNormalHit"; }
 
+            if (!self.wavyProjectile) { ignoreList[29] = "wavyness"; }
+            
+
             if (self.shootType != ShootType.Single) 
             {
                 self.selfDestruct = false; ignoreList[20] = "selfDestruct"; ignoreList[21] = "selfDestructTime"; ignoreList[22] = "overrideNormalHit";
-                ignoreList[23] = "ricochet"; ignoreList[12] = "ricochetCount";
+                ignoreList[23] = "ricochet"; ignoreList[12] = "ricochetCount"; ignoreList[29] = "wavyness"; ignoreList[30] = "wavyProjectile";
             }
+
 
             if (!self.frost) { ignoreList[22] = "frostDuration"; ignoreList[23] = "frostSlowdown"; }
             if (!self.stun) { ignoreList[24] = "stunDuration"; }

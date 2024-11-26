@@ -20,6 +20,7 @@ MonoBehaviour:
   timeBeforeFiring: 1.5
   timeBetweenShots: 0.08
   projectileSpeed: 18
+  projectileSpread: 12
   hitDistance: 10
   hitDelay: 0.2
   infiniteAmmo: 0

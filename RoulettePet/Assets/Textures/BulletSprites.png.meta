@@ -134,12 +134,12 @@ TextureImporter:
       name: Club_Anchor
       rect:
         serializedVersion: 2
-        x: 1
-        y: 122
-        width: 26
-        height: 31
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 28
+        y: 93
+        width: 31
+        height: 26
+      alignment: 9
+      pivot: {x: 0.48387095, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -975,7 +975,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1
-        y: 112
+        y: 134
         width: 15
         height: 9
       alignment: 9
@@ -996,7 +996,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1
-        y: 102
+        y: 144
         width: 15
         height: 9
       alignment: 9
@@ -1017,7 +1017,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1
-        y: 92
+        y: 124
         width: 15
         height: 9
       alignment: 9

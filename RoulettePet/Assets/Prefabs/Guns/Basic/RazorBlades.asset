@@ -20,6 +20,7 @@ MonoBehaviour:
   timeBeforeFiring: 0
   timeBetweenShots: 1
   projectileSpeed: 8
+  projectileSpread: 0
   hitDistance: 10
   hitDelay: 0.2
   infiniteAmmo: 0
@@ -29,7 +30,7 @@ MonoBehaviour:
   reloadTime: 3
   overheatable: 0
   shockWaves: 0
-  knockback: 0
+  knockback: 1
   ricochet: 1
   multishot: 0
   lightning: 0
@@ -38,7 +39,7 @@ MonoBehaviour:
   timeToOverheat: 8
   timeToCool: 5
   shockWaveSize: 23
-  knockbackPower: 200
+  knockbackPower: 50
   ricochetCount: 5
   split: 3
   consumeExtraAmmo: 1

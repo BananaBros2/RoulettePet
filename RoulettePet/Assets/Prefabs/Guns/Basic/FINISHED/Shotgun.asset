@@ -20,6 +20,7 @@ MonoBehaviour:
   timeBeforeFiring: 0
   timeBetweenShots: 0.5
   projectileSpeed: 10
+  projectileSpread: 5
   hitDistance: 10
   hitDelay: 0.2
   infiniteAmmo: 0
@@ -28,7 +29,6 @@ MonoBehaviour:
   magMax: 12
   reloadTime: 2
   overheatable: 0
-  explosiveAmmo: 0
   shockWaves: 0
   knockback: 1
   ricochet: 0
@@ -38,7 +38,6 @@ MonoBehaviour:
   goreyDeath: 0
   timeToOverheat: 8
   timeToCool: 5
-  explosionArea: 3
   shockWaveSize: 23
   knockbackPower: 200
   ricochetCount: 5

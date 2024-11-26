@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.Mathematics;
 using UnityEngine;
+using static ScriptableGun;
 
 public class GunScript : MonoBehaviour
 {
@@ -15,8 +16,6 @@ public class GunScript : MonoBehaviour
     public int ammoLeft = 0;
     public int ammoLeftInMag = 0;
     public bool reloading = false;
-
-    public GameObject bullet;
 
     System.Random randomizer;
 
@@ -172,8 +171,7 @@ public class GunScript : MonoBehaviour
     {
         GameObject newBullet = Instantiate(gun.attackObject, gunObject.transform.GetChild(0).transform.position, gunObject.transform.rotation);
 
-        float randomOffset = (float)randomizer.Next(-100, 100) / 100;
-        print(randomOffset);
+        float randomOffset = (float)randomizer.Next(-gun.projectileSpread/2, gun.projectileSpread / 2);
         newBullet.transform.Rotate(0, 0, rotationOffset + randomOffset);
 
         if (!gun.infiniteMag && consumeAmmo) // Do not consume if has infinite mag ammo or if trigged not to
@@ -182,10 +180,23 @@ public class GunScript : MonoBehaviour
             UpdateAmmoCounter();
         }
 
+
+        float attackSpeed = (gun.shootType == ShootType.Single) ? gun.projectileSpeed : 0;
         AttackScript bulletProperties = newBullet.GetComponent<AttackScript>();
-        bulletProperties.SetBasicProperties(gun.projectileSpeed, gun.damage);
+        bulletProperties.SetBasicProperties(attackSpeed, gun.damage);
+
         TransferSpecials(gun, bulletProperties);
         TransferDebuffs(gun, bulletProperties);
+
+
+        if (gun.shootType == ShootType.ConstantArea || gun.shootType == ShootType.BurstArea)
+        {
+            bulletProperties.attackType = AttackScript.AttackType.InstantArea;
+            if (gun.newAreaPoints.Length < 3) { return; }
+
+            newBullet.GetComponent<PolygonCollider2D>().points = gun.newAreaPoints;
+            
+        }
     }
 
     public void TransferSpecials(ScriptableGun gun, AttackScript bulletProperties)
@@ -195,7 +206,8 @@ public class GunScript : MonoBehaviour
             gun.knockback ? gun.knockbackPower : 0,
             gun.ricochet ? gun.ricochetCount : 0,
             gun.exponentialLightning, gun.flatDiminishPercentage, gun.maxChain,
-            gun.goreyDeath);
+            gun.goreyDeath,
+            gun.wavyProjectile ? gun.wavyness : 0);
 
     }
 

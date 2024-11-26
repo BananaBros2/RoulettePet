@@ -1,16 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class AttackScript : MonoBehaviour
 {
+    public AttackType attackType = AttackType.Projectile;
+
     private Rigidbody2D rb;
     public Sprite[] randomSprite;
 
-    public float speed = 1;
+    public float speed = 0;
     public float damage = 1;
-
-    public bool wavyProjectile = true;
 
     public float explosiveArea = 0;
     public bool createShockwave = false;
@@ -18,12 +20,15 @@ public class AttackScript : MonoBehaviour
     public float knockbackPower = 0;
     public int ricochets = 0;
     public LayerMask ricochetLayers;
-
+    
     public bool exponentialLightning;
     public float lightningDiminish = 0.15f;
     public int lightningMaxChain = 0;
 
     public bool gore = false;
+
+    public float wavyness = 0;
+    private float wavePosition = 90f;
 
     public float frostDuration = 0;
     public float frostSlowdown = 0;
@@ -32,14 +37,20 @@ public class AttackScript : MonoBehaviour
     public float poisonDamage = 0;
     public float conversionDuration = 0;
 
-    //private float wavePosition = 45f;
-
     public Vector2 directionalVelocity;
 
     public GameObject shockwaveObject;
 
     private float triggerEnterDelay;
 
+    private List<Collider2D> triggeredObjectsList = new List<Collider2D>();
+
+    public enum AttackType
+    {
+        Projectile,
+        ConstantArea,
+        InstantArea
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -50,22 +61,27 @@ public class AttackScript : MonoBehaviour
             System.Random rand = new System.Random();
             transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = randomSprite[rand.Next(0,randomSprite.Length-1)];
         }
-        
 
+        if (attackType == AttackType.InstantArea)
+        {
+            Invoke("HitTriggerTargets", 0.1f);
+        }
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
         rb.velocity = transform.right * speed;
-        //if (wavyProjectile)
-        //{
-        //    wavePosition += speed/30;
-        //    rb.velocity = rb.velocity + new Vector2(transform.up.x * Mathf.Sin(wavePosition) * speed, transform.up.y * Mathf.Sin(wavePosition) * speed);
-        //}
+
+        if (wavyness != 0)
+        {
+            wavePosition += speed/30;
+            rb.velocity = rb.velocity + new Vector2(transform.up.x * Mathf.Sin(wavePosition) * speed * wavyness, transform.up.y * Mathf.Sin(wavePosition) * speed * wavyness);
+        }
+
         triggerEnterDelay -= Time.fixedDeltaTime;
     }
-    
+
 
     public void SetBasicProperties(float newSpeed, float newDamage)
     {
@@ -75,7 +91,7 @@ public class AttackScript : MonoBehaviour
     public void SetSpecialProperties(bool newShockwaves, int newShockwavesSize,
                                      float newKnockbackPower, int newRicochetCount,
                                      bool newExponentiLightning, float newDiminishLightning, int newMaxChain,
-                                     bool addGore)
+                                     bool addGore, float newWavyness)
     {
         createShockwave = newShockwaves;
         shockwavesSize = newShockwavesSize;
@@ -88,6 +104,8 @@ public class AttackScript : MonoBehaviour
         lightningMaxChain = newMaxChain;
 
         gore = addGore;
+
+        wavyness = newWavyness;
     }
     public void SetDebuffProperties(float newFrostDuration, float newFrostSlowdown,
                                     float newStunDuration, float newConversionDuration,
@@ -104,31 +122,53 @@ public class AttackScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        try
+        if (attackType == AttackType.Projectile)
         {
-            EntityStatus target = collision.GetComponent<EntityStatus>();
-
-            if (triggerEnterDelay < 0) { HitTarget(target); }
-
-            if (ricochets > 0 && triggerEnterDelay < 0) { RicochetBounce(collision); }
-            else if (ricochets < 1) { Destroy(this.gameObject); }
-
-            triggerEnterDelay = 0.05f;
-        }
-        catch
-        {
-            if(collision.CompareTag("Wall"))
+            try
             {
-                if (createShockwave) { CreateShockwave(transform.position); }
+                EntityStatus target = collision.GetComponent<EntityStatus>();
 
-                if (ricochets > 0) { RicochetBounce(collision); }
-                else { Destroy(this.gameObject); }
+                if (triggerEnterDelay < 0) { HitTarget(target); }
 
-                triggerEnterDelay = 0.01f;
+                if (ricochets > 0 && triggerEnterDelay < 0) { RicochetBounce(collision); }
+                else if (ricochets < 1) { Destroy(this.gameObject); }
+
+                triggerEnterDelay = 0.05f;
+            }
+            catch
+            {
+                if (collision.CompareTag("Wall"))
+                {
+                    if (createShockwave) { CreateShockwave(transform.position); }
+
+                    if (ricochets > 0) { RicochetBounce(collision); }
+                    else { Destroy(this.gameObject); }
+
+                    triggerEnterDelay = 0.01f;
+                }
+
+            }
+        }
+        else if (attackType == AttackType.InstantArea )
+        {
+            if (collision.CompareTag("Enemy") || collision.CompareTag("Frenemy"))
+            {
+                triggeredObjectsList.Add(collision);
+            }
+                
+        }
+
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (attackType == AttackType.InstantArea)
+        {
+            if (triggeredObjectsList.Contains(collision))
+            {
+                triggeredObjectsList.Remove(collision);
             }
 
         }
-
     }
 
     public void RicochetBounce(Collider2D collision)
@@ -150,6 +190,19 @@ public class AttackScript : MonoBehaviour
 
         }
 
+    }
+
+    public void HitTriggerTargets()
+    {
+
+        for (int i = 0; i < triggeredObjectsList.Count; i++)
+        {
+            if(triggeredObjectsList[i] == null) { continue; }
+
+            HitTarget(triggeredObjectsList[i].GetComponent<EntityStatus>());
+        }
+
+        Destroy(this.gameObject);
     }
 
     public void HitTarget(EntityStatus target)

@@ -69,7 +69,7 @@ public class EnemyMovement : MonoBehaviour
 
         foreach (GameObject selectedObject in potentialTargets)
         {
-            float dist = Vector3.Distance(this.transform.position, selectedObject.transform.position);
+            float dist = Vector3.Distance(transform.position, selectedObject.transform.position);
             if (dist < oldDistance && selectedObject != transform.gameObject)
             {
                 closestObject = selectedObject;

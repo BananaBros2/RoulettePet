@@ -15,11 +15,17 @@ MonoBehaviour:
   activationType: 1
   shootType: 3
   weaponPrefab: {fileID: 9010594303139797588, guid: dafe297a3f25bcf4aa99ad222dd0e8f4, type: 3}
-  attackObject: {fileID: 0}
+  attackObject: {fileID: 9209801138886082010, guid: e4a682c1bc92d6441bab1b08b1034334, type: 3}
+  newAreaPoints:
+  - {x: -0.6, y: -0.25}
+  - {x: -0.6, y: 0.25}
+  - {x: 1, y: 0.25}
+  - {x: 1, y: -0.25}
   damage: 4
   timeBeforeFiring: 0
   timeBetweenShots: 0.1
   projectileSpeed: 10
+  projectileSpread: 0
   hitDistance: 10
   hitDelay: 0.2
   infiniteAmmo: 1
@@ -28,7 +34,6 @@ MonoBehaviour:
   magMax: 20
   reloadTime: 2
   overheatable: 0
-  explosiveAmmo: 0
   shockWaves: 0
   knockback: 0
   ricochet: 0
@@ -38,7 +43,6 @@ MonoBehaviour:
   goreyDeath: 1
   timeToOverheat: 8
   timeToCool: 5
-  explosionArea: 3
   shockWaveSize: 23
   knockbackPower: 200
   ricochetCount: 5

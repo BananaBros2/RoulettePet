@@ -17,7 +17,8 @@ public class InventoryScript : MonoBehaviour
     private InventoryItem selectedItem;
 
     private float timeSinceLastMove = 0;
-    public float scrollDelay = 0.3f;
+    public float defaultScrollDelay = 0.1f;
+    private float currentScrollDelay = 0.1f;
 
     // Start is called before the first frame update
     void Start()
@@ -53,6 +54,7 @@ public class InventoryScript : MonoBehaviour
             transform.GetComponent<SpriteRenderer>().enabled = false;
 
             inventoryOpen = false;
+            currentScrollDelay = defaultScrollDelay;
         }
 
         if (!inventoryOpen) { return; }
@@ -69,16 +71,18 @@ public class InventoryScript : MonoBehaviour
         if (Input.GetButtonDown("Horizontal"))
         {
             ChangeSelection();
-            timeSinceLastMove = -1;
+            timeSinceLastMove = -0.1f;
+            currentScrollDelay = defaultScrollDelay;
         }
         else if (Input.GetButton("Horizontal"))
         {
-            timeSinceLastMove += Time.fixedDeltaTime;
+            timeSinceLastMove += Time.deltaTime;
 
-            if (timeSinceLastMove > scrollDelay)
+            if (timeSinceLastMove > currentScrollDelay)
             {
                 ChangeSelection();
                 timeSinceLastMove = 0;
+                currentScrollDelay = Mathf.Max(currentScrollDelay - 0.03f, 0.02f);
             }
         }
         else
