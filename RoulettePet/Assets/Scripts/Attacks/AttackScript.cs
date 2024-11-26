@@ -30,6 +30,8 @@ public class AttackScript : MonoBehaviour
     public float wavyness = 0;
     private float wavePosition = 90f;
 
+    private float velocityLossRate = 1;
+
     public float frostDuration = 0;
     public float frostSlowdown = 0;
     public float stunDuration = 0;
@@ -80,18 +82,31 @@ public class AttackScript : MonoBehaviour
         }
 
         triggerEnterDelay -= Time.fixedDeltaTime;
+
+        speed *= velocityLossRate;
+        if (speed < 0.01f)
+        {
+            if (createShockwave) { CreateShockwave(transform.position); }
+            Destroy(this.gameObject);
+        }
+        else if (speed < 3)
+        {
+            speed *= 0.9f;
+        }
     }
 
 
-    public void SetBasicProperties(float newSpeed, float newDamage)
+    public void SetBasicProperties(float newSpeed, float newDamage, float heldPower = -1)
     {
-        speed = newSpeed;
+
+        speed = (heldPower == -1) ? newSpeed : newSpeed * heldPower;
         damage = newDamage;
+
     }
     public void SetSpecialProperties(bool newShockwaves, int newShockwavesSize,
                                      float newKnockbackPower, int newRicochetCount,
                                      bool newExponentiLightning, float newDiminishLightning, int newMaxChain,
-                                     bool addGore, float newWavyness)
+                                     bool addGore, float newWavyness, float newVelocityLossRate)
     {
         createShockwave = newShockwaves;
         shockwavesSize = newShockwavesSize;
@@ -106,6 +121,8 @@ public class AttackScript : MonoBehaviour
         gore = addGore;
 
         wavyness = newWavyness;
+
+        velocityLossRate = newVelocityLossRate;
     }
     public void SetDebuffProperties(float newFrostDuration, float newFrostSlowdown,
                                     float newStunDuration, float newConversionDuration,
@@ -128,7 +145,7 @@ public class AttackScript : MonoBehaviour
             {
                 EntityStatus target = collision.GetComponent<EntityStatus>();
 
-                if (triggerEnterDelay < 0) { HitTarget(target); }
+                if (triggerEnterDelay < 0) { HitTarget(target, transform); }
 
                 if (ricochets > 0 && triggerEnterDelay < 0) { RicochetBounce(collision); }
                 else if (ricochets < 1) { Destroy(this.gameObject); }
@@ -199,18 +216,18 @@ public class AttackScript : MonoBehaviour
         {
             if(triggeredObjectsList[i] == null) { continue; }
 
-            HitTarget(triggeredObjectsList[i].GetComponent<EntityStatus>());
+            HitTarget(triggeredObjectsList[i].GetComponent<EntityStatus>(), transform);
         }
 
         Destroy(this.gameObject);
     }
 
-    public void HitTarget(EntityStatus target)
+    public void HitTarget(EntityStatus target, Transform originObject)
     {
         target.TakeDamage(damage, Color.white);
         TransferDebuffs(target);
 
-        if (knockbackPower != 0) { target.Knockback(transform, knockbackPower); }
+        if (knockbackPower != 0) { target.Knockback(originObject, knockbackPower); }
 
         if (createShockwave)
         {

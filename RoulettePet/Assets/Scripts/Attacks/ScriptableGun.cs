@@ -41,7 +41,7 @@ public class ScriptableGun : ScriptableObject
     [Tooltip("Projectile attacks will bounce off surfaces and objects")]                    public bool ricochet;
     [Tooltip("Attacks will be created in unison with the given angle difference")]          public bool multishot;
     [Tooltip("Attacks will create a chain of lighting which bounces between targets")]      public bool lightning;
-    [Tooltip("Attacks will automatically do their effects after a set period of time")]     public bool selfDestruct;
+    [Tooltip("Attacks will loose velocity when travelling and then self-detruct")]          public bool loseVelocity;
     [Tooltip("Targets will viscerally explode on death")]                                   public bool goreyDeath;
     [Tooltip("Projectiles will travel in a (sin) wave-formation")]                          public bool wavyProjectile;
 
@@ -71,9 +71,9 @@ public class ScriptableGun : ScriptableObject
     [Tooltip("Additive percentage that reduces lightning chain damage, will not continue if <= 0")]public float flatDiminishPercentage = 0.15f;
     [Tooltip("Max targets the lightning will travel between")]                              public int maxChain = 4;
 
-    [Header("Self Destruction")]  // = = = = = = = = = = = = = = = = = = = = = = = = = = = | Self Destruction | = = = = = = = = #
-    [Tooltip("Time in seconds that the object will self-destruct after")]                   public float selfDestructTime = 3;
-    [Tooltip("Only destroy on self-destruct, projectile will lose all speed if no ricochet")]public bool overrideNormalHit = false;
+    [Header("Velocity Loss")] // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = | Velocity Loss | = = = = = = = =  = #
+    [Tooltip("Number velocity will be multiplied by every fixed frame")]                    public float slowdownRate = 1f;
+    [Tooltip("Only activate on 0 velocity, projectile will lose all speed if no ricochet")] public bool overrideNormalHit = false;
 
     [Header("Wavy Bullets")]  // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = | Wavy Bullets | = = = = = = = = = = #
     [Tooltip("How agressive the projectiles will warble")]                                  public float wavyness = 1;
@@ -125,17 +125,17 @@ public class ScriptableGun : ScriptableObject
             serializedObject.Update();
 
             string[] ignoreList;
-            ignoreList = new string[31];
+            ignoreList = new string[32];
 
             if (self.shootType != ShootType.DirectlyAtTarget) { ignoreList[0] = "hitDistance"; }
             if (self.shootType != ShootType.Single) { ignoreList[1] = "projectileSpeed"; }
             if (self.shootType != ShootType.ConstantArea) { ignoreList[2] = "hitDelay"; }
 
             if (!(self.shootType == ShootType.BurstArea || self.shootType == ShootType.ConstantArea))
-            { ignoreList[7] = "newAreaPoints"; }
+            { ignoreList[3] = "newAreaPoints"; }
 
-            if (self.infiniteAmmo) { ignoreList[3] = "ammoMax"; }
-            if (self.infiniteMag) { ignoreList[4] = "magMax"; ignoreList[5] = "reloadTime"; ignoreList[6] = "fuelConsumptionRate"; }
+            if (self.infiniteAmmo) { ignoreList[4] = "ammoMax"; }
+            if (self.infiniteMag) { ignoreList[5] = "magMax"; ignoreList[6] = "reloadTime"; ignoreList[7] = "fuelConsumptionRate"; }
 
             //if (!self.explosiveAmmo) { ignoreList[7] = "explosionArea"; }
             if (!self.shockWaves) { ignoreList[8] = "shockWaveSize"; }
@@ -149,23 +149,23 @@ public class ScriptableGun : ScriptableObject
             if (!self.lightning) { ignoreList[16] = "exponentialLightning"; ignoreList[17] = "flatDiminishPercentage"; ignoreList[18] = "maxChain"; }
             if (self.exponentialLightning) { ignoreList[19] = "maxChain"; }
 
-            if (!self.selfDestruct) { ignoreList[21] = "selfDestructTime"; ignoreList[22] = "overrideNormalHit"; }
+            if (!self.loseVelocity) { ignoreList[20] = "slowdownRate"; ignoreList[21] = "overrideNormalHit"; }
 
-            if (!self.wavyProjectile) { ignoreList[29] = "wavyness"; }
+            if (!self.wavyProjectile) { ignoreList[22] = "wavyness"; }
             
 
             if (self.shootType != ShootType.Single) 
             {
-                self.selfDestruct = false; ignoreList[20] = "selfDestruct"; ignoreList[21] = "selfDestructTime"; ignoreList[22] = "overrideNormalHit";
-                ignoreList[23] = "ricochet"; ignoreList[12] = "ricochetCount"; ignoreList[29] = "wavyness"; ignoreList[30] = "wavyProjectile";
+                self.loseVelocity = false; ignoreList[23] = "selfDestruct"; ignoreList[20] = "slowdownRate"; ignoreList[21] = "overrideNormalHit";
+                ignoreList[23] = "ricochet"; ignoreList[12] = "ricochetCount"; ignoreList[22] = "wavyness"; ignoreList[24] = "wavyProjectile";
             }
 
 
-            if (!self.frost) { ignoreList[22] = "frostDuration"; ignoreList[23] = "frostSlowdown"; }
-            if (!self.stun) { ignoreList[24] = "stunDuration"; }
-            if (!self.poison) { ignoreList[25] = "poisonDuration"; ignoreList[26] = "poisonDamage"; }
-            if (!self.enemyConversion) { ignoreList[27] = "conversionDuration"; }
-            if (!self.freeze) { ignoreList[28] = "freezeDuration"; }
+            if (!self.frost) { ignoreList[25] = "frostDuration"; ignoreList[26] = "frostSlowdown"; }
+            if (!self.stun) { ignoreList[27] = "stunDuration"; }
+            if (!self.poison) { ignoreList[28] = "poisonDuration"; ignoreList[29] = "poisonDamage"; }
+            if (!self.enemyConversion) { ignoreList[30] = "conversionDuration"; }
+            if (!self.freeze) { ignoreList[31] = "freezeDuration"; }
 
             DrawPropertiesExcluding(serializedObject, ignoreList);
 

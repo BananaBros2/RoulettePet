@@ -19,6 +19,8 @@ public class GunScript : MonoBehaviour
 
     System.Random randomizer;
 
+    private float currentHeldValue = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -70,7 +72,7 @@ public class GunScript : MonoBehaviour
     {
 
 
-        if (gunClass.activationType != ScriptableGun.ActivationType.Single && Input.GetButton("Fire1") && !reloading)
+        if (gunClass.activationType == ScriptableGun.ActivationType.Held && Input.GetButton("Fire1") && !reloading)
         {
             if (!ActivationCheck(gunClass)) { return; }
 
@@ -89,7 +91,32 @@ public class GunScript : MonoBehaviour
         }
 
 
-
+        if (gunClass.activationType == ScriptableGun.ActivationType.HeldDistance && Input.GetButton("Fire1") && ActivationCheck(gunClass))
+        {
+            if(currentHeldValue == 0)
+            {
+                currentHeldValue = 0.3f;
+            }
+            currentHeldValue = Mathf.Clamp(currentHeldValue + 0.02f, 0.1f, 1);
+        }
+        else if (currentHeldValue > 0 && ActivationCheck(gunClass))
+        {
+            if (gunClass.multishot)
+            {
+                timeSinceLastShot = 0;
+                MultishotMath(gunClass, currentHeldValue);
+            }
+            else
+            {
+                timeSinceLastShot = 0;
+                ShootProjectile(gunClass, 0, true, currentHeldValue);
+            }
+            currentHeldValue = 0;
+        }
+        else
+        {
+            currentHeldValue = 0;
+        }
 
 
     }
@@ -149,7 +176,7 @@ public class GunScript : MonoBehaviour
     }
 
 
-    public void MultishotMath(ScriptableGun gun)
+    public void MultishotMath(ScriptableGun gun, float heldPower = -1)
     {
         int attackCount = gun.split; // Control how many bullets are shot
         if (gun.consumeExtraAmmo)
@@ -161,13 +188,13 @@ public class GunScript : MonoBehaviour
         for (int b = 0; b < attackCount; b++) // Calculate and shoot each bullet
         {
             float shootAngle = (gun.angleDifference * b) - (0.5f * (attackCount - 1) * gun.angleDifference); // Yummy rotation math
-            ShootProjectile(gun, shootAngle, consumeAmmo);
+            ShootProjectile(gun, shootAngle, consumeAmmo, heldPower);
 
             if (!gun.consumeExtraAmmo) { consumeAmmo = false; } // Only consume ammo on first shot
         }
     }
 
-    public void ShootProjectile(ScriptableGun gun, float rotationOffset = 0, bool consumeAmmo = true)
+    public void ShootProjectile(ScriptableGun gun, float rotationOffset = 0, bool consumeAmmo = true, float heldPower = -1)
     {
         GameObject newBullet = Instantiate(gun.attackObject, gunObject.transform.GetChild(0).transform.position, gunObject.transform.rotation);
 
@@ -183,7 +210,7 @@ public class GunScript : MonoBehaviour
 
         float attackSpeed = (gun.shootType == ShootType.Single) ? gun.projectileSpeed : 0;
         AttackScript bulletProperties = newBullet.GetComponent<AttackScript>();
-        bulletProperties.SetBasicProperties(attackSpeed, gun.damage);
+        bulletProperties.SetBasicProperties(attackSpeed, gun.damage, heldPower);
 
         TransferSpecials(gun, bulletProperties);
         TransferDebuffs(gun, bulletProperties);
@@ -194,8 +221,15 @@ public class GunScript : MonoBehaviour
             bulletProperties.attackType = AttackScript.AttackType.InstantArea;
             if (gun.newAreaPoints.Length < 3) { return; }
 
-            newBullet.GetComponent<PolygonCollider2D>().points = gun.newAreaPoints;
-            
+
+            PolygonCollider2D newCollider = newBullet.GetComponent<PolygonCollider2D>();
+            newCollider.points = gun.newAreaPoints;
+
+            if(heldPower == -1) { return; } // Held power has not been changed is default
+            for(int i = 0; i < newCollider.points.Length; i++)
+            {
+                newCollider.points[i] *= heldPower;
+            }
         }
     }
 
@@ -207,7 +241,8 @@ public class GunScript : MonoBehaviour
             gun.ricochet ? gun.ricochetCount : 0,
             gun.exponentialLightning, gun.flatDiminishPercentage, gun.maxChain,
             gun.goreyDeath,
-            gun.wavyProjectile ? gun.wavyness : 0);
+            gun.wavyProjectile ? gun.wavyness : 0,
+            gun.loseVelocity ? gun.slowdownRate : 1);
 
     }
 
