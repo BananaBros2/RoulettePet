@@ -302,7 +302,7 @@ MonoBehaviour:
   normalSprite: {fileID: 569840900, guid: 38cb9c395c286b34fa70db8efb461d6d, type: 3}
   spinningSprite: {fileID: -1498947059, guid: 38cb9c395c286b34fa70db8efb461d6d, type: 3}
   hitRange: 0.22
-  rotationSpeed: 10
+  rotationSpeed: 20
 --- !u!1 &6594411694266826927
 GameObject:
   m_ObjectHideFlags: 0
@@ -415,7 +415,7 @@ MonoBehaviour:
   normalSprite: {fileID: 2119311238, guid: 38cb9c395c286b34fa70db8efb461d6d, type: 3}
   spinningSprite: {fileID: -1603434321, guid: 38cb9c395c286b34fa70db8efb461d6d, type: 3}
   hitRange: 0.22
-  rotationSpeed: 10
+  rotationSpeed: 20
 --- !u!1 &8231324028293466295
 GameObject:
   m_ObjectHideFlags: 0
@@ -550,7 +550,7 @@ MonoBehaviour:
   normalSprite: {fileID: 1731138554, guid: 38cb9c395c286b34fa70db8efb461d6d, type: 3}
   spinningSprite: {fileID: -980041262, guid: 38cb9c395c286b34fa70db8efb461d6d, type: 3}
   hitRange: 0.22
-  rotationSpeed: 10
+  rotationSpeed: 20
 --- !u!1 &8892320142773410993
 GameObject:
   m_ObjectHideFlags: 0

@@ -27,8 +27,9 @@ public class AttackScript : MonoBehaviour
 
     public bool gore = false;
 
+    private Vector3 baselineDirection;
     public float wavyness = 0;
-    private float wavePosition = 90f;
+    private float wavePosition = 45;
 
     private float velocityLossRate = 1;
 
@@ -46,6 +47,12 @@ public class AttackScript : MonoBehaviour
     private float triggerEnterDelay;
 
     private List<Collider2D> triggeredObjectsList = new List<Collider2D>();
+
+    public GameObject destroyParticleObject;
+    public int destroyedParticlesCount = 0;
+    public int destroyedParticleForce = 10;
+    public List<Sprite> destroyedSprites;
+
 
     public enum AttackType
     {
@@ -68,6 +75,8 @@ public class AttackScript : MonoBehaviour
         {
             Invoke("HitTriggerTargets", 0.1f);
         }
+
+        baselineDirection = transform.rotation.eulerAngles;
     }
 
     // Update is called once per frame
@@ -78,16 +87,18 @@ public class AttackScript : MonoBehaviour
         if (wavyness != 0)
         {
             wavePosition += speed/30;
-            rb.velocity = rb.velocity + new Vector2(transform.up.x * Mathf.Sin(wavePosition) * speed * wavyness, transform.up.y * Mathf.Sin(wavePosition) * speed * wavyness);
+            transform.rotation = Quaternion.Euler(0,0, baselineDirection.z + Mathf.Sin(wavePosition) * wavyness);
         }
 
         triggerEnterDelay -= Time.fixedDeltaTime;
 
+        if (velocityLossRate == 1) { return; }
+        print(velocityLossRate);
         speed *= velocityLossRate;
-        if (speed < 0.01f)
+        if (speed < 0.05f)
         {
             if (createShockwave) { CreateShockwave(transform.position); }
-            Destroy(this.gameObject);
+            DestroyAttack();
         }
         else if (speed < 3)
         {
@@ -148,7 +159,7 @@ public class AttackScript : MonoBehaviour
                 if (triggerEnterDelay < 0) { HitTarget(target, transform); }
 
                 if (ricochets > 0 && triggerEnterDelay < 0) { RicochetBounce(collision); }
-                else if (ricochets < 1) { Destroy(this.gameObject); }
+                else if (ricochets < 1) { DestroyAttack(); }
 
                 triggerEnterDelay = 0.05f;
             }
@@ -159,7 +170,7 @@ public class AttackScript : MonoBehaviour
                     if (createShockwave) { CreateShockwave(transform.position); }
 
                     if (ricochets > 0) { RicochetBounce(collision); }
-                    else { Destroy(this.gameObject); }
+                    else { DestroyAttack(); }
 
                     triggerEnterDelay = 0.01f;
                 }
@@ -219,7 +230,7 @@ public class AttackScript : MonoBehaviour
             HitTarget(triggeredObjectsList[i].GetComponent<EntityStatus>(), transform);
         }
 
-        Destroy(this.gameObject);
+        DestroyAttack();
     }
 
     public void HitTarget(EntityStatus target, Transform originObject)
@@ -262,7 +273,27 @@ public class AttackScript : MonoBehaviour
         newShockwave.poisonDamage = poisonDamage;
         newShockwave.conversionDuration = conversionDuration;
 
+    }
 
+    public void DestroyAttack()
+    {
+        if(destroyedParticlesCount > 0)
+        {
+            System.Random rand = new System.Random();
+
+            for (int i = 1;  i <= destroyedParticlesCount; i++)
+            {
+                GameObject newParticle = Instantiate(destroyParticleObject, transform.position, Quaternion.identity);
+                newParticle.GetComponent<Rigidbody2D>().velocity = new Vector2(rand.Next(-100,100), rand.Next(-100, 100)).normalized * destroyedParticleForce;
+
+                if (destroyedSprites.Count > 0)
+                {
+                    newParticle.GetComponent<SpriteRenderer>().sprite = destroyedSprites[rand.Next(0, destroyedSprites.Count - 1)];
+                }
+            }
+        }
+
+        Destroy(this.gameObject);
 
     }
 }

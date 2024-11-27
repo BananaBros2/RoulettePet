@@ -76,7 +76,7 @@ public class ScriptableGun : ScriptableObject
     [Tooltip("Only activate on 0 velocity, projectile will lose all speed if no ricochet")] public bool overrideNormalHit = false;
 
     [Header("Wavy Bullets")]  // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = | Wavy Bullets | = = = = = = = = = = #
-    [Tooltip("How agressive the projectiles will warble")]                                  public float wavyness = 1;
+    [Tooltip("How agressive the projectiles will warble")]                                  public float wavyness = 50;
 
 
     [Header("Debuffs")] // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = | Debuffs  | = = = = = = = = = = = = #

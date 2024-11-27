@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditorInternal.Profiling.Memory.Experimental;
 using UnityEngine;
 
 public class InventoryItem : MonoBehaviour
@@ -26,15 +25,20 @@ public class InventoryItem : MonoBehaviour
         if (selected) 
         { 
             transform.GetComponent<SpriteRenderer>().sprite = currentItem.selectedSprite;
+            transform.GetComponent<SpriteRenderer>().sortingOrder = 2;
 
             if (currentItem.itemName == "NULL") { return; }
 
             transform.localPosition = originalPosition * 1.05f;
+            //transform.localScale = Vector3.one * 2;
+
         }
         else
         {
             transform.GetComponent<SpriteRenderer>().sprite = currentItem.itemSprite;
+            transform.GetComponent<SpriteRenderer>().sortingOrder = 1;
             transform.localPosition = originalPosition;
+            //transform.localScale = Vector3.one;
         }
         
 

@@ -15,12 +15,12 @@ MonoBehaviour:
   activationType: 2
   shootType: 0
   weaponPrefab: {fileID: 9010594303139797588, guid: c71a4e9b784ac8b4a839b9c4a9ffec6d, type: 3}
-  attackObject: {fileID: 9209801138886082010, guid: a6a2ce32ef274054199d618562e5f2e9, type: 3}
+  attackObject: {fileID: 9209801138886082010, guid: 513b316f58b598944994b91ae36f6df2, type: 3}
   newAreaPoints: []
-  damage: 20
+  damage: 5
   timeBeforeFiring: 0
   timeBetweenShots: 0.2
-  projectileSpeed: 8
+  projectileSpeed: 15
   projectileSpread: 0
   hitDistance: 10
   hitDelay: 0.2

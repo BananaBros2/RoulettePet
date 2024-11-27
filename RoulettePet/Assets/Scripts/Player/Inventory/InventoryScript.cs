@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using UnityEditorInternal.Profiling.Memory.Experimental;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -71,7 +70,6 @@ public class InventoryScript : MonoBehaviour
         if (Input.GetButtonDown("Horizontal"))
         {
             ChangeSelection();
-            timeSinceLastMove = -0.1f;
             currentScrollDelay = defaultScrollDelay;
         }
         else if (Input.GetButton("Horizontal"))
@@ -82,7 +80,7 @@ public class InventoryScript : MonoBehaviour
             {
                 ChangeSelection();
                 timeSinceLastMove = 0;
-                currentScrollDelay = Mathf.Max(currentScrollDelay - 0.03f, 0.02f);
+                currentScrollDelay = Mathf.Max(currentScrollDelay - Time.deltaTime*10, 0.02f);
             }
         }
         else

@@ -260,9 +260,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0e2c83d1da02164c9a02b1215b41e2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackType: 0
+  randomSprite: []
   speed: 1
   damage: 1
-  wavyProjectile: 1
   explosiveArea: 0
   createShockwave: 0
   shockwavesSize: 0
@@ -275,6 +276,7 @@ MonoBehaviour:
   lightningDiminish: 0.15
   lightningMaxChain: 0
   gore: 0
+  wavyness: 0
   frostDuration: 0
   frostSlowdown: 0
   stunDuration: 0
@@ -283,6 +285,14 @@ MonoBehaviour:
   conversionDuration: 0
   directionalVelocity: {x: 0, y: 0}
   shockwaveObject: {fileID: 4789715195803271934, guid: 31992e20c666daa4c9ec60dd6c7b2ec0, type: 3}
+  destroyParticleObject: {fileID: 3636077715856154196, guid: a05f989c8617bce41aa64ef7ef2559ea, type: 3}
+  destroyedParticlesCount: 4
+  destroyedParticleForce: 10
+  destroyedSprites:
+  - {fileID: 474550665, guid: 38cb9c395c286b34fa70db8efb461d6d, type: 3}
+  - {fileID: -1905691516, guid: 38cb9c395c286b34fa70db8efb461d6d, type: 3}
+  - {fileID: 387563638, guid: 38cb9c395c286b34fa70db8efb461d6d, type: 3}
+  - {fileID: -213965206, guid: 38cb9c395c286b34fa70db8efb461d6d, type: 3}
 --- !u!50 &4870840054454170301
 Rigidbody2D:
   serializedVersion: 4

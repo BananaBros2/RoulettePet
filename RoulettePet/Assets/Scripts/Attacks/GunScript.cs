@@ -95,7 +95,7 @@ public class GunScript : MonoBehaviour
         {
             if(currentHeldValue == 0)
             {
-                currentHeldValue = 0.3f;
+                currentHeldValue = 0.2f;
             }
             currentHeldValue = Mathf.Clamp(currentHeldValue + 0.02f, 0.1f, 1);
         }

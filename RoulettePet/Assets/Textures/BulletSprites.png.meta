@@ -1033,6 +1033,888 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Dart
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 118
+        width: 15
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bd08933ee04108419385067228c41c4
+      internalID: -273874164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fat
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 110
+        width: 18
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c770932b77cdae459f4f3a6ea04755a
+      internalID: -661323500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldFat
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 100
+        width: 18
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f5c0e134ce88a84e9c85e3b73e95016
+      internalID: -1045784387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StarPiece_1
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 149
+        width: 4
+        height: 3
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3852b09356299a7478dca5d6032bca7e
+      internalID: 474550665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StarPiece_2
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 149
+        width: 3
+        height: 3
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a44239d18b35e2148b7a47a268f55106
+      internalID: -1905691516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StarPiece_3
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 145
+        width: 2
+        height: 3
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88ab2748c61ec514d83af04531ec3139
+      internalID: 387563638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StarPiece_4
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 144
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25644de09544a03479e35aadaa88d1de
+      internalID: -213965206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DicePiece_1
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 137
+        width: 3
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2739adc13928d76498176a4912f22c90
+      internalID: -481852355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DicePiece_2
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 137
+        width: 3
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 796f6c3a81209bc4082be70d7cde93f0
+      internalID: -49447700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DicePiece_3
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 133
+        width: 3
+        height: 3
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89ed731eae5140a4e828684aaa97249d
+      internalID: 1472815870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DicePiece_4
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 133
+        width: 3
+        height: 3
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40052ed4f2eb79b45842c171de1c378b
+      internalID: 1166237055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CherryBomb
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 118
+        width: 9
+        height: 13
+      alignment: 9
+      pivot: {x: 0.5555556, y: 0.3846154}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 569766278041e724d93ae7f00af212fc
+      internalID: 1569954120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmokeA_1
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 112
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7704c2e609eb00241b9a5ecf06377f6e
+      internalID: -1267317770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmokeA_2
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 106
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e401fc933df6a943915a90ca13d68da
+      internalID: -2120104498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmokeA_3
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 100
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40009450e831ff8418d55782f4909010
+      internalID: 193232280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmokeA_4
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 94
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a83bfa3e2e65d849b574ae1ec03710b
+      internalID: -1537898687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmokeB_1
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 112
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8ccb332fc3e46045bf2478cdbbabff2
+      internalID: -252256217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmokeB_2
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 106
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e84ae45322293f428843d50e0623226
+      internalID: -1670067883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmokeB_3
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 100
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32f5197b6e1ed974d83f2dc96918b007
+      internalID: 439532086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmokeB_4
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 94
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95bf7b8d196bb6744becf97b4d00db71
+      internalID: 1199335588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmokeC_1
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 112
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23676aba58adbd14fb2539e6771b77b6
+      internalID: -1549515333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmokeC_2
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 106
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b1003be84ea10e44a71ee7c3f43bc63
+      internalID: -1623626782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmokeC_3
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 100
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55284f721ba68274b8cea2c9f4c1e452
+      internalID: 51142816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmokeC_4
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 94
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e9e530561e794d4eacc4f072446622b
+      internalID: -1925053124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SparkleHit_1
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 158
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30c6765dcb4e1d447999cb52434fc8bd
+      internalID: -1934084196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SparkleHit_2
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 152
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7bfcf8e2cd970a64f873e7dd4ded52c6
+      internalID: -513125888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SparkleHit_3
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 146
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d1b413e994f07f4eb77f8c84f124e80
+      internalID: -527916369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireParticleA_1
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 112
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e55a8ce407e3c14a874472ca725f427
+      internalID: 1758332841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireParticleA_2
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 112
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 388c27dcb7b2acd4ca070b237ff3346c
+      internalID: -1863761417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireParticleA_3
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 112
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fceb35c78db007d4f82a57042816bdc9
+      internalID: -771440558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireParticleA_4
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 112
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10487a627020e7e468dc3432e8dd9761
+      internalID: 24876346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireParticleA_5
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 112
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf6bba8c22a6b204b8a4e5e997448332
+      internalID: -2064164864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireParticleB_1
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 100
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2cdbf6c761eea847bd277889ebc2e50
+      internalID: -1236147925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireParticleB_2
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 100
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3fe43dd61b713c43a8b13d775fdef12
+      internalID: -2097997846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireParticleB_3
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 100
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3477abc3fabbe08478be2b028d62b564
+      internalID: -488706757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireParticleB_4
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 100
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7a11d8b3eda18243a24f92567b4204a
+      internalID: -2081825301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireParticleB_5
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 100
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e11fee97f696a2943ab4569fcee3b7dd
+      internalID: 1326521234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireParticleC_1
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 88
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d414e103adf57e14ba7fb503273eccde
+      internalID: -1447893122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireParticleC_2
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 88
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 467488b4535dedc429a86f3989ecfce2
+      internalID: 1142511275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireParticleC_3
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 88
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b63f557cbe1c9e445aa49519d15adc14
+      internalID: -654830400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireParticleC_4
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 88
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bfae24ba97246f4ca7de6b0a4cfa72e
+      internalID: 489229256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireParticleC_5
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 88
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f94c957f5bae8524782d73262ec9d76e
+      internalID: 1123284535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -1060,6 +1942,7 @@ TextureImporter:
       Billiard_7: 2025412579
       Billiard_8: 219093104
       Billiard_9: 1574820575
+      CherryBomb: 1569954120
       Club_Anchor: 2128026565
       Club_Ball1: 569840900
       Club_Ball1_Saw: -1498947059
@@ -1071,12 +1954,53 @@ TextureImporter:
       Coin2: -682190996
       Coin3: -988670677
       Coin4: -856584182
+      Dart: -273874164
       Dice1: 1336260480
       Dice2: 639227167
       Dice3: -2038980712
       Dice4: -1263886363
       Dice5: -759842733
       Dice6: -156475775
+      DicePiece_1: -481852355
+      DicePiece_2: -49447700
+      DicePiece_3: 1472815870
+      DicePiece_4: 1166237055
+      Fat: -661323500
+      FireParticleA_1: 1758332841
+      FireParticleA_2: -1863761417
+      FireParticleA_3: -771440558
+      FireParticleA_4: 24876346
+      FireParticleA_5: -2064164864
+      FireParticleB_1: -1236147925
+      FireParticleB_2: -2097997846
+      FireParticleB_3: -488706757
+      FireParticleB_4: -2081825301
+      FireParticleB_5: 1326521234
+      FireParticleC_1: -1447893122
+      FireParticleC_2: 1142511275
+      FireParticleC_3: -654830400
+      FireParticleC_4: 489229256
+      FireParticleC_5: 1123284535
+      GoldFat: -1045784387
+      SmokeA_1: -1267317770
+      SmokeA_2: -2120104498
+      SmokeA_3: 193232280
+      SmokeA_4: -1537898687
+      SmokeB_1: -252256217
+      SmokeB_2: -1670067883
+      SmokeB_3: 439532086
+      SmokeB_4: 1199335588
+      SmokeC_1: -1549515333
+      SmokeC_2: -1623626782
+      SmokeC_3: 51142816
+      SmokeC_4: -1925053124
+      SparkleHit_1: -1934084196
+      SparkleHit_2: -513125888
+      SparkleHit_3: -527916369
+      StarPiece_1: 474550665
+      StarPiece_2: -1905691516
+      StarPiece_3: 387563638
+      StarPiece_4: -213965206
       StarTrail1: 491813065
       StarTrail2: -1661561159
       StarTrail3: 202334160

@@ -16,7 +16,7 @@ public class SpaceCluball : MonoBehaviour
     public Sprite spinningSprite;
 
     public float hitRange = 0.22f;
-    public float rotationSpeed = 1;
+    public float rotationSpeed = 20;
 
 
     // Start is called before the first frame update
@@ -38,7 +38,8 @@ public class SpaceCluball : MonoBehaviour
                 targeted = oriPos.transform.position;
                 transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = normalSprite;
 
-                transform.GetChild(0).transform.rotation = Quaternion.RotateTowards(Quaternion.identity, new Quaternion(0,0,0,0), rotationSpeed);
+                transform.rotation = Quaternion.RotateTowards(transform.rotation, oriPos.transform.rotation, rotationSpeed/2);
+                transform.GetChild(0).transform.localRotation = Quaternion.RotateTowards(transform.GetChild(0).transform.localRotation, Quaternion.identity, rotationSpeed/4);
             }
             else
             {
@@ -75,7 +76,7 @@ public class SpaceCluball : MonoBehaviour
                 }
             }
 
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(0.2f);
         }
 
     }
