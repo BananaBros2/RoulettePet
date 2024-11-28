@@ -36,8 +36,9 @@ MonoBehaviour:
   multishot: 0
   lightning: 0
   loseVelocity: 0
+  timerActivate: 0
   goreyDeath: 0
-  wavyProjectile: 0
+  wavyProjectile: 1
   timeToOverheat: 8
   timeToCool: 5
   shockWaveSize: 20
@@ -50,8 +51,10 @@ MonoBehaviour:
   flatDiminishPercentage: 0.15
   maxChain: 4
   slowdownRate: 1
+  activateOnZero: 0
   overrideNormalHit: 0
-  wavyness: 1
+  attackExpireTimer: 0
+  wavyness: 6
   frost: 0
   frostDuration: 4
   frostSlowdown: 0.15

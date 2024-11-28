@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.Mathematics;
 using UnityEngine;
+
 using static ScriptableGun;
 
 public class GunScript : MonoBehaviour
@@ -11,6 +12,8 @@ public class GunScript : MonoBehaviour
     public ScriptableGun gunClass;
     public TMP_Text ammoCounterText;
     public GameObject reloadingText;
+
+    private int flip = 1;
 
     public float timeSinceLastShot = 0;
     public int ammoLeft = 0;
@@ -36,6 +39,18 @@ public class GunScript : MonoBehaviour
     {
         // Make gun turn to face mouse
         gunObject.transform.right = TurnToMouse(gunObject.transform);
+        //if (gunObject.transform.eulerAngles.z < 90 || gunObject.transform.eulerAngles.z > 270)
+        //{
+        //    gunObject.transform.localScale = new Vector3(1, 1, gunObject.transform.localScale.z);
+        //    flip = 1;
+        //}
+        //else
+        //{
+        //    gunObject.transform.localScale = new Vector3(-1, gunObject.transform.localScale.y, gunObject.transform.localScale.z);
+        //    gunObject.transform.right *= -1;
+        //    flip = -1;
+        //}
+
 
         timeSinceLastShot += Time.deltaTime;
 
@@ -215,6 +230,10 @@ public class GunScript : MonoBehaviour
         TransferSpecials(gun, bulletProperties);
         TransferDebuffs(gun, bulletProperties);
 
+        if (gunObject.TryGetComponent<GunAnimationController>(out GunAnimationController gunAnimation))
+        {
+            gunAnimation.StartEffects(rotationOffset + randomOffset);
+        }
 
         if (gun.shootType == ShootType.ConstantArea || gun.shootType == ShootType.BurstArea)
         {

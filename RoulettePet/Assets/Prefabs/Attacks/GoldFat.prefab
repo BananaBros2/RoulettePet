@@ -84,6 +84,52 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1086495850979940613
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1980506471659179356}
+  - component: {fileID: 598096772187919727}
+  m_Layer: 0
+  m_Name: ParticleSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1980506471659179356
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1086495850979940613}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.25, y: 0, z: -0.004050005}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1013780463155437388}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &598096772187919727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1086495850979940613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49e529ab61d16274492554bfe2c41598, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particleObject: {fileID: 4330867751762013127, guid: e76a75b670738794e9b18e8ee92815ac, type: 3}
+  spawnFrequency: 0.02
 --- !u!1 &9209801138886082010
 GameObject:
   m_ObjectHideFlags: 0
@@ -117,6 +163,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2805839450586447780}
+  - {fileID: 1980506471659179356}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7303581310824165424
@@ -156,6 +203,10 @@ MonoBehaviour:
   conversionDuration: 0
   directionalVelocity: {x: 0, y: 0}
   shockwaveObject: {fileID: 4789715195803271934, guid: 31992e20c666daa4c9ec60dd6c7b2ec0, type: 3}
+  destroyParticleObject: {fileID: 0}
+  destroyedParticlesCount: 0
+  destroyedParticleForce: 10
+  destroyedSprites: []
 --- !u!50 &4870840054454170301
 Rigidbody2D:
   serializedVersion: 4
