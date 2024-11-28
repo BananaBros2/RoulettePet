@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class AttackScript : MonoBehaviour
 {
@@ -97,6 +98,7 @@ public class AttackScript : MonoBehaviour
         if (speed < 0.05f)
         {
             if (createShockwave) { CreateShockwave(transform.position); }
+
             DestroyAttack();
         }
         else if (speed < 3)
@@ -244,6 +246,11 @@ public class AttackScript : MonoBehaviour
             CreateShockwave(target.transform.position);
         }
 
+        if (lightningDiminish != 2)
+        {
+            CreateLightning(target.gameObject);
+        }
+
 
     }
 
@@ -273,6 +280,25 @@ public class AttackScript : MonoBehaviour
         newShockwave.conversionDuration = conversionDuration;
 
     }
+
+    public void CreateLightning(GameObject target)
+    {
+        ChainLightning newLightning = target.AddComponent<ChainLightning>();
+
+        newLightning.frostDuration = frostDuration;
+        newLightning.frostSlowdown = frostSlowdown;
+        newLightning.stunDuration = stunDuration;
+        newLightning.poisonDuration = poisonDuration;
+        newLightning.poisonDamage = poisonDamage;
+        newLightning.conversionDuration = conversionDuration;
+
+        List<GameObject> blackList = new List<GameObject>();
+
+        blackList.Add(target);
+        newLightning.StartLightning(exponentialLightning, damage, lightningDiminish, blackList, 0, lightningMaxChain);
+
+    }
+
 
     public void DestroyAttack()
     {

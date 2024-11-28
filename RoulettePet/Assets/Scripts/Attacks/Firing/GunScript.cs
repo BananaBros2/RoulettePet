@@ -13,7 +13,7 @@ public class GunScript : MonoBehaviour
     public TMP_Text ammoCounterText;
     public GameObject reloadingText;
 
-    private int flip = 1;
+    //private int flip = 1;
 
     public float timeSinceLastShot = 0;
     public int ammoLeft = 0;
@@ -59,7 +59,7 @@ public class GunScript : MonoBehaviour
             StartReload(gunClass);
         }
 
-        if (gunClass.activationType == ScriptableGun.ActivationType.Single && Input.GetButtonDown("Fire1") && !reloading)
+        if (gunClass.activationType == ScriptableGun.ActivationType.Projectile && Input.GetButtonDown("Fire1") && !reloading)
         {
             if (!ActivationCheck(gunClass)) { return; }
 
@@ -258,7 +258,7 @@ public class GunScript : MonoBehaviour
             gun.shockWaves, gun.shockWaveSize,
             gun.knockback ? gun.knockbackPower : 0,
             gun.ricochet ? gun.ricochetCount : 0,
-            gun.exponentialLightning, gun.flatDiminishPercentage, gun.maxChain,
+            gun.exponentialLightning, gun.lightning ? gun.flatDiminishPercentage : 2, gun.maxChain,
             gun.goreyDeath,
             gun.wavyProjectile ? gun.wavyness : 0,
             gun.loseVelocity ? gun.slowdownRate : 1);

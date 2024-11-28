@@ -105,7 +105,7 @@ public class ScriptableGun : ScriptableObject
 
     public enum ActivationType
     {
-        Single,
+        Projectile,
         Held,
         HeldDistance
     }

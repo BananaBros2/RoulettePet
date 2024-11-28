@@ -13,13 +13,15 @@ MonoBehaviour:
   m_Name: B-ChainLightningBasic
   m_EditorClassIdentifier: 
   activationType: 0
-  shootType: 1
+  shootType: 0
   weaponPrefab: {fileID: 9010594303139797588, guid: 89100ae35d0207c4499435e7f44c4444, type: 3}
-  attackObject: {fileID: 0}
-  damage: 30
+  attackObject: {fileID: 9209801138886082010, guid: 5d2e08fa6dee9e84fa5c36b29cadf10d, type: 3}
+  newAreaPoints: []
+  damage: 12
   timeBeforeFiring: 0
   timeBetweenShots: 1
   projectileSpeed: 10
+  projectileSpread: 0
   hitDistance: 10
   hitDelay: 0.2
   infiniteAmmo: 1
@@ -28,17 +30,17 @@ MonoBehaviour:
   magMax: 5
   reloadTime: 3
   overheatable: 0
-  explosiveAmmo: 0
   shockWaves: 0
   knockback: 0
   ricochet: 0
   multishot: 0
   lightning: 1
-  selfDestruct: 0
+  loseVelocity: 0
+  timerActivate: 0
   goreyDeath: 0
+  wavyProjectile: 0
   timeToOverheat: 8
   timeToCool: 5
-  explosionArea: 3
   shockWaveSize: 23
   knockbackPower: 200
   ricochetCount: 5
@@ -48,14 +50,17 @@ MonoBehaviour:
   exponentialLightning: 1
   flatDiminishPercentage: 0.15
   maxChain: 3
-  selfDestructTime: 3
+  slowdownRate: 1
+  activateOnZero: 0
   overrideNormalHit: 0
+  attackExpireTimer: 0
+  wavyness: 50
   frost: 0
   frostDuration: 4
   frostSlowdown: 0.15
   stun: 0
   stunDuration: 2
-  poison: 0
+  poison: 1
   poisonDuration: 6
   poisonDamage: 30
   enemyConversion: 0
