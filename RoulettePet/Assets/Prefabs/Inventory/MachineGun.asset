@@ -16,4 +16,4 @@ MonoBehaviour:
   itemSprite: {fileID: 1392367982, guid: 3cc7b45ec879e6246befdb65c8791edf, type: 3}
   selectedSprite: {fileID: 1812784364, guid: 3cc7b45ec879e6246befdb65c8791edf, type: 3}
   itemName: Stargazer
-  description: NULL
+  description: Gaze upon the shooting stars

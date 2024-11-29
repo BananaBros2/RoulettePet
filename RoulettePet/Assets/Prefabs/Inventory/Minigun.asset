@@ -16,4 +16,4 @@ MonoBehaviour:
   itemSprite: {fileID: 220602443, guid: 3cc7b45ec879e6246befdb65c8791edf, type: 3}
   selectedSprite: {fileID: -1106143208, guid: 3cc7b45ec879e6246befdb65c8791edf, type: 3}
   itemName: Lucky 7
-  description: NULL
+  description: Is it still lucky if you keep winning?

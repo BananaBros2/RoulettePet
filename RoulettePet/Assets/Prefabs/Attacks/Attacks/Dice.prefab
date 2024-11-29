@@ -164,7 +164,7 @@ MonoBehaviour:
   shockwaveObject: {fileID: 4789715195803271934, guid: 31992e20c666daa4c9ec60dd6c7b2ec0, type: 3}
   destroyParticleObject: {fileID: 3636077715856154196, guid: a05f989c8617bce41aa64ef7ef2559ea, type: 3}
   destroyedParticlesCount: 4
-  destroyedParticleForce: 10
+  destroyedParticleForce: 6
   destroyedSprites:
   - {fileID: -481852355, guid: 38cb9c395c286b34fa70db8efb461d6d, type: 3}
   - {fileID: -49447700, guid: 38cb9c395c286b34fa70db8efb461d6d, type: 3}

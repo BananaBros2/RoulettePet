@@ -16,4 +16,4 @@ MonoBehaviour:
   itemSprite: {fileID: 743286510, guid: 3cc7b45ec879e6246befdb65c8791edf, type: 3}
   selectedSprite: {fileID: -1652282717, guid: 3cc7b45ec879e6246befdb65c8791edf, type: 3}
   itemName: Bank Statement
-  description: NULL
+  description: Well that's not good is it?

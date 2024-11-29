@@ -157,7 +157,7 @@ public class AttackScript : MonoBehaviour
             {
                 EntityStatus target = collision.GetComponent<EntityStatus>();
 
-                if (triggerEnterDelay < 0) { HitTarget(target, transform); }
+                if (triggerEnterDelay <= 0) { HitTarget(target, transform); }
 
                 if (ricochets > 0 && triggerEnterDelay < 0) { RicochetBounce(collision); }
                 else if (ricochets < 1) { DestroyAttack(); }
@@ -236,8 +236,17 @@ public class AttackScript : MonoBehaviour
 
     public void HitTarget(EntityStatus target, Transform originObject)
     {
-        target.TakeDamage(damage, Color.white);
-        TransferDebuffs(target);
+
+        if (lightningDiminish != 2)
+        {
+            print("here");
+            CreateLightning(target.gameObject);
+        }
+        else
+        {
+            target.TakeDamage(damage, Color.white);
+            TransferDebuffs(target);
+        }
 
         if (knockbackPower != 0) { target.Knockback(originObject, knockbackPower); }
 
@@ -246,10 +255,7 @@ public class AttackScript : MonoBehaviour
             CreateShockwave(target.transform.position);
         }
 
-        if (lightningDiminish != 2)
-        {
-            CreateLightning(target.gameObject);
-        }
+
 
 
     }

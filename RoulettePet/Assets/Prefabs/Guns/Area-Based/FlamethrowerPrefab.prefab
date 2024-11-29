@@ -42,6 +42,7 @@ GameObject:
   - component: {fileID: 4525454364537876545}
   - component: {fileID: 1795288090500780210}
   - component: {fileID: 3778185472037992619}
+  - component: {fileID: 30070058561143865}
   m_Layer: 0
   m_Name: FlamethrowerPrefab
   m_TagString: Untagged
@@ -133,3 +134,17 @@ MonoBehaviour:
   shotenParticle: {fileID: 8185096367466602708, guid: f0b3504e69c750c4690d65dd29e2fd29, type: 3}
   projectileOffset: 30
   projectileGrowSpeed: 0.15
+  jabber: 0
+--- !u!114 &30070058561143865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9010594303139797588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 497438343efe609438bd888efb89ba3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shootSound: {fileID: 0}

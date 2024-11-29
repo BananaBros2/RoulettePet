@@ -17,10 +17,10 @@ MonoBehaviour:
   weaponPrefab: {fileID: 9010594303139797588, guid: dafe297a3f25bcf4aa99ad222dd0e8f4, type: 3}
   attackObject: {fileID: 9209801138886082010, guid: e4a682c1bc92d6441bab1b08b1034334, type: 3}
   newAreaPoints:
-  - {x: -0.6, y: -0.25}
-  - {x: -0.6, y: 0.25}
-  - {x: 1, y: 0.25}
-  - {x: 1, y: -0.25}
+  - {x: -0.6, y: -0.1}
+  - {x: -0.6, y: 0.1}
+  - {x: 1, y: 0.1}
+  - {x: 1, y: -0.1}
   damage: 4
   timeBeforeFiring: 0
   timeBetweenShots: 0.1
@@ -35,16 +35,18 @@ MonoBehaviour:
   reloadTime: 2
   overheatable: 0
   shockWaves: 0
-  knockback: 0
+  knockback: 1
   ricochet: 0
   multishot: 0
   lightning: 0
-  selfDestruct: 0
+  loseVelocity: 0
+  timerActivate: 0
   goreyDeath: 1
+  wavyProjectile: 0
   timeToOverheat: 8
   timeToCool: 5
   shockWaveSize: 23
-  knockbackPower: 200
+  knockbackPower: 5
   ricochetCount: 5
   split: 3
   consumeExtraAmmo: 1
@@ -52,8 +54,11 @@ MonoBehaviour:
   exponentialLightning: 0
   flatDiminishPercentage: 0.15
   maxChain: 4
-  selfDestructTime: 3
+  slowdownRate: 1
+  activateOnZero: 0
   overrideNormalHit: 0
+  attackExpireTimer: 0
+  wavyness: 50
   frost: 0
   frostDuration: 4
   frostSlowdown: 0.15

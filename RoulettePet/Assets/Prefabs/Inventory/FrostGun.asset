@@ -15,5 +15,5 @@ MonoBehaviour:
   scriptableWeapon: {fileID: 11400000, guid: aef5f7642752a5d4e9398aabd635bb28, type: 2}
   itemSprite: {fileID: 155233130, guid: 3cc7b45ec879e6246befdb65c8791edf, type: 3}
   selectedSprite: {fileID: -1683331123, guid: 3cc7b45ec879e6246befdb65c8791edf, type: 3}
-  itemName: Stolen AC
-  description: NULL
+  itemName: Broken AC
+  description: It was broken before It was stolen

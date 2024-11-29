@@ -16,4 +16,4 @@ MonoBehaviour:
   itemSprite: {fileID: -1966153899, guid: 3cc7b45ec879e6246befdb65c8791edf, type: 3}
   selectedSprite: {fileID: -785942114, guid: 3cc7b45ec879e6246befdb65c8791edf, type: 3}
   itemName: Space of Clubs
-  description: NULL
+  description: Surprisingly sharp

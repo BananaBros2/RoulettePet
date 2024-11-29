@@ -66,11 +66,14 @@ public class GunScript : MonoBehaviour
 
             if (gunClass.multishot)
             {
+
+                gunObject.GetComponent<GunAudio>().PlayShootSound();
                 timeSinceLastShot = 0;
                 MultishotMath(gunClass);
             }
             else
             {
+                gunObject.GetComponent<GunAudio>().PlayShootSound();
                 timeSinceLastShot = 0;
                 ShootProjectile(gunClass);
             }
@@ -94,11 +97,13 @@ public class GunScript : MonoBehaviour
 
             if(gunClass.multishot)
             {
+                gunObject.GetComponent<GunAudio>().PlayShootSound();
                 timeSinceLastShot = 0;
                 MultishotMath(gunClass);
             }
             else
             {
+                gunObject.GetComponent<GunAudio>().PlayShootSound();
                 timeSinceLastShot = 0;
                 ShootProjectile(gunClass);
             }
