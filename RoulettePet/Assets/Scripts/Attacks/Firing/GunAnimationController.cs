@@ -9,18 +9,25 @@ public class GunAnimationController : MonoBehaviour
     public int projectileOffset = 0;
     public float projectileGrowSpeed = 0;
 
+    public bool jabber;
+    private GameObject spriteHolder;
+
     System.Random rand = new System.Random();
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        if (jabber)
+        {
+            spriteHolder = transform.GetChild(0).gameObject;
+        }
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void StartEffects(float shotOffset)
@@ -32,12 +39,12 @@ public class GunAnimationController : MonoBehaviour
             StartCoroutine(ShootParticles(shotOffset));
         }
         
+        if (jabber)
+        {
+            StartCoroutine(JabbingMotion());
+        }
     }
 
-    public void JabbingMotion()
-    {
-
-    }
 
     public void StartShootingParticles()
     {
@@ -66,4 +73,22 @@ public class GunAnimationController : MonoBehaviour
         }
     }
 
+    IEnumerator JabbingMotion()
+    {
+        int motionAmount = 0;
+        while(motionAmount < 5)
+        {
+            spriteHolder.transform.position += spriteHolder.transform.right / 12;
+            motionAmount++;
+            yield return new WaitForSeconds(0.01f);
+        }
+
+        motionAmount = 0;
+        while (motionAmount < 5)
+        {
+            spriteHolder.transform.position -= spriteHolder.transform.right / 12;
+            motionAmount++;
+            yield return new WaitForSeconds(0.01f);
+        }
+    }
 }

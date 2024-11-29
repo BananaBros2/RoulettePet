@@ -15,5 +15,5 @@ MonoBehaviour:
   scriptableWeapon: {fileID: 11400000, guid: 2b4215415a3f0ab49aebbe4b269710d7, type: 2}
   itemSprite: {fileID: -984749128, guid: 3cc7b45ec879e6246befdb65c8791edf, type: 3}
   selectedSprite: {fileID: -276221273, guid: 3cc7b45ec879e6246befdb65c8791edf, type: 3}
-  itemName: Missile Launcher
-  description: NULL
+  itemName: Fat Win
+  description: Highly explosive, only allowed due to gold exterior

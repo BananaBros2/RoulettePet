@@ -16,4 +16,4 @@ MonoBehaviour:
   itemSprite: {fileID: 383460078, guid: 3cc7b45ec879e6246befdb65c8791edf, type: 3}
   selectedSprite: {fileID: 7846222, guid: 3cc7b45ec879e6246befdb65c8791edf, type: 3}
   itemName: Embrace of Hearts
-  description: NULL
+  description: Everyone needs a change of heart

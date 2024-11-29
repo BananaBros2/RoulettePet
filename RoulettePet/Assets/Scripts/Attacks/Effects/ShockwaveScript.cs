@@ -43,7 +43,7 @@ public class ShockwaveScript : MonoBehaviour
 
                 if (hit.transform.TryGetComponent<EntityStatus>(out EntityStatus status))
                 {
-                    status.TakeDamage(waveDamage, new Color(0.8f, 0.8f, 1));
+                    status.TakeDamage(waveDamage, new Color(0.7f, 0.7f, 1));
                     TransferDebuffs(status);
                 }
             }

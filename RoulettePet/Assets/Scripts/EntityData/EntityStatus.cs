@@ -1,3 +1,4 @@
+using NUnit.Framework.Internal;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -42,6 +43,8 @@ public class EntityStatus : MonoBehaviour
     public bool converted = false;
     public float convertedTimeRemaining = 0;
 
+    public AudioClip hitSound;
+    System.Random randomizer;
 
     private void Start()
     {
@@ -51,6 +54,8 @@ public class EntityStatus : MonoBehaviour
         {
             playerEntity = true;
         }
+
+        randomizer = new System.Random();
     }
 
     private void FixedUpdate()
@@ -104,6 +109,10 @@ public class EntityStatus : MonoBehaviour
         {
             TakeDamage(collision.transform.GetComponent<EntityStatus>().enemyDamage, Color.red);
         }
+        if (transform.CompareTag("Enemy") && collision.transform.CompareTag("Frenemy"))
+        {
+            TakeDamage(collision.transform.GetComponent<EntityStatus>().enemyDamage / 4, Color.magenta);
+        }
     }
 
     public void TakeDamage(float damage, Color textColour)
@@ -111,10 +120,17 @@ public class EntityStatus : MonoBehaviour
         if(curInvincibilityFrames > 0) { return; }
         curInvincibilityFrames = invincibilityFrames;
 
+        if (transform.TryGetComponent<AudioSource>(out AudioSource audioSource) && (health > damage || playerEntity))
+        {
+            audioSource.pitch = 1 + ((float)randomizer.Next(-100, 100) / 800);
+            audioSource.PlayOneShot(hitSound);
+        }
+
         health -= damage;
 
         DamageText newDamageText = Instantiate(damageText, transform.position + new Vector3(0,0.5f,0), Quaternion.identity).GetComponent<DamageText>();
         newDamageText.UpdateDamageText(-damage, textColour);
+        newDamageText.transform.localScale = Vector3.one * (1 + damage / 100);
 
         if (healthBarGreen != null)
         {

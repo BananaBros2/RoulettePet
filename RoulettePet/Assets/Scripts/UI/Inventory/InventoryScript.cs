@@ -9,6 +9,7 @@ public class InventoryScript : MonoBehaviour
     private Transform slotsHolder;
     public GunScript gunScript;
     public TMP_Text itemNameTMP;
+    public TMP_Text itemDescriptionTMP;
     public GameObject pointer;
 
     public bool inventoryOpen;
@@ -26,6 +27,15 @@ public class InventoryScript : MonoBehaviour
         slotsHolder.GetChild(itemSelectingIndex).transform.GetComponent<InventoryItem>().SelectItem(true);
 
         selectedItem = slotsHolder.GetChild(itemSelectingIndex).transform.GetComponent<InventoryItem>();
+
+        if (selectedItem.currentItem.itemName == "NULL")
+        {
+            itemNameTMP.text = " ";
+            return;
+        }
+
+        itemNameTMP.text = selectedItem.currentItem.itemName;
+        itemDescriptionTMP.text = selectedItem.currentItem.description;
     }
 
     // Update is called once per frame
@@ -111,6 +121,7 @@ public class InventoryScript : MonoBehaviour
         }
 
         itemNameTMP.text = selectedItem.currentItem.itemName;
+        itemDescriptionTMP.text = selectedItem.currentItem.description;
     }
 
 }

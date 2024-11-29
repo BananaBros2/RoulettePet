@@ -16,4 +16,4 @@ MonoBehaviour:
   itemSprite: {fileID: 1097963246, guid: 3cc7b45ec879e6246befdb65c8791edf, type: 3}
   selectedSprite: {fileID: -686835878, guid: 3cc7b45ec879e6246befdb65c8791edf, type: 3}
   itemName: Apace of Spades
-  description: NULL
+  description: Black or white it doesn't matter if it hits hard.

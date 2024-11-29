@@ -41,6 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4525454364537876545}
   - component: {fileID: 1795288090500780210}
+  - component: {fileID: -7749988661327486092}
   m_Layer: 0
   m_Name: BChainLightningPrefab
   m_TagString: Untagged
@@ -116,3 +117,16 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-7749988661327486092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9010594303139797588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 497438343efe609438bd888efb89ba3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shootSound: {fileID: 0}
